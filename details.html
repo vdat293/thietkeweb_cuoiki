@@ -7,7 +7,7 @@
     <title>Chi tiết chỗ ở - Aoklevart</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect" />
     <!-- Premium Typography: Playfair Display + DM Sans -->
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap"
@@ -661,7 +661,6 @@
 
             document.getElementById('price-display').textContent = property.price;
             const bookNowLink = document.getElementById('book-now-link');
-            // document.getElementById('book-now-link').href = `payment.html?id=${property.id}`; // Removed static assignment
 
             // --- Booking Logic ---
             const checkInInput = document.getElementById('check-in');
@@ -829,10 +828,9 @@
             });
         });
     </script>
-</body>
 
-<!-- Login Modal -->
-<div id="login-modal" class="fixed inset-0 z-[60] hidden">
+    <!-- Login Modal -->
+    <div id="login-modal" class="fixed inset-0 z-[60] hidden">
     <!-- Backdrop -->
     <div class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity opacity-0" id="login-backdrop">
     </div>
@@ -1085,7 +1083,7 @@
             });
         }
     });
-</script>
+    </script>
 </body>
 
 </html>
