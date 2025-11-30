@@ -86,7 +86,8 @@
                                     <div class="flex justify-between items-center">
                                         <div>
                                             <p class="font-bold text-neutral-700 dark:text-white">Ngày</p>
-                                            <p class="text-neutral-500 dark:text-neutral-200">15/08/2024 – 20/08/2024
+                                            <p class="text-neutral-500 dark:text-neutral-200" id="booking-dates">
+                                                15/08/2024 – 20/08/2024
                                             </p>
                                         </div>
                                         <button
@@ -95,7 +96,8 @@
                                     <div class="flex justify-between items-center">
                                         <div>
                                             <p class="font-bold text-neutral-700 dark:text-white">Số lượng khách</p>
-                                            <p class="text-neutral-500 dark:text-neutral-200">2 người lớn</p>
+                                            <p class="text-neutral-500 dark:text-neutral-200" id="booking-guests">2
+                                                người lớn</p>
                                         </div>
                                         <button
                                             class="font-bold underline text-neutral-700 dark:text-white hover:text-primary">Sửa</button>
@@ -260,19 +262,60 @@
             document.getElementById('property-reviews').textContent = `(${property.reviews} đánh giá)`;
 
             // Price calculation (matching details.html logic)
-            const priceString = property.price.replace(/\./g, '').replace('₫', '');
-            const pricePerNight = parseInt(priceString);
+            const checkInParam = urlParams.get('checkIn');
+            const checkOutParam = urlParams.get('checkOut');
+            const roomTypeParam = urlParams.get('roomType');
 
-            if (!isNaN(pricePerNight)) {
-                const nights = 5;
+            const priceString = property.price.replace(/\./g, '').replace('₫', '');
+            const pricePerNightBase = parseInt(priceString);
+
+            if (checkInParam && checkOutParam && !isNaN(pricePerNightBase)) {
+                // Update dates display
+                const formatDate = (dateString) => {
+                    const date = new Date(dateString);
+                    return `${date.getDate().toString().padStart(2, '0')}/${(date.getMonth() + 1).toString().padStart(2, '0')}/${date.getFullYear()}`;
+                };
+
+                // Find the date display element (assuming structure matches)
+                // The structure is: <p class="text-neutral-500 ...">15/08/2024 – 20/08/2024</p>
+                // We need to target it more specifically or update the HTML structure to have an ID.
+                // For now, let's try to find it by text content or context, but adding an ID is safer.
+                // Let's assume I will add IDs in a separate edit or try to find it.
+                // Actually, let's just update the calculation logic first as requested.
+
+                const checkInDate = new Date(checkInParam);
+                const checkOutDate = new Date(checkOutParam);
+                const timeDiff = checkOutDate - checkInDate;
+                const nights = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+                let roomMultiplier = 1;
+                if (roomTypeParam === 'double') roomMultiplier = 1.3;
+                if (roomTypeParam === 'quad') roomMultiplier = 1.5;
+
+                const pricePerNight = Math.round(pricePerNightBase * roomMultiplier);
                 const totalBase = pricePerNight * nights;
                 const serviceFee = Math.round(totalBase * 0.1);
                 const total = totalBase + serviceFee;
 
-                document.getElementById('price-calculation').textContent = `${property.price} x ${nights} đêm`;
+                document.getElementById('price-calculation').textContent = `${pricePerNight.toLocaleString('vi-VN')}₫ x ${nights} đêm`;
                 document.getElementById('price-total-base').textContent = `${totalBase.toLocaleString('vi-VN')}₫`;
                 document.getElementById('service-fee').textContent = `${serviceFee.toLocaleString('vi-VN')}₫`;
                 document.getElementById('total-price').textContent = `${total.toLocaleString('vi-VN')}₫`;
+
+                // Update dates text
+                document.getElementById('booking-dates').textContent = `${formatDate(checkInParam)} – ${formatDate(checkOutParam)}`;
+
+                // Update guests text (simple logic for now)
+                let guestsText = '2 khách';
+                if (roomTypeParam === 'single') guestsText = '1 khách';
+                if (roomTypeParam === 'quad') guestsText = '4 khách';
+                document.getElementById('booking-guests').textContent = guestsText;
+            } else {
+                // Fallback or error handling if params are missing
+                document.getElementById('price-calculation').textContent = `0₫ x 0 đêm`;
+                document.getElementById('price-total-base').textContent = `0₫`;
+                document.getElementById('service-fee').textContent = `0₫`;
+                document.getElementById('total-price').textContent = `0₫`;
             }
 
             loadingElement.classList.add('hidden');

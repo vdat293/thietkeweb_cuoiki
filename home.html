@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>TripStay - Tìm kiếm không gian hoàn hảo cho chuyến đi của bạn</title>
+  <title>Aoklevart - Tìm kiếm không gian hoàn hảo cho chuyến đi của bạn</title>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link href="https://fonts.googleapis.com" rel="preconnect" />
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
@@ -313,7 +313,7 @@
 
     <!-- Premium Header -->
     <header
-      class="sticky top-0 z-50 w-full bg-cream/95 backdrop-blur-lg border-b border-light-border transition-all duration-500">
+      class="fixed top-0 z-50 w-full bg-cream/95 backdrop-blur-lg border-b border-light-border transition-all duration-500">
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
         <div class="flex items-center justify-between h-20">
 
@@ -326,7 +326,7 @@
               <span class="relative text-white font-display font-bold text-lg">T</span>
             </div>
             <div class="flex flex-col">
-              <span class="font-display text-xl font-semibold text-primary tracking-tight">TripStay</span>
+              <span class="font-display text-xl font-semibold text-primary tracking-tight">Aoklevart</span>
               <span class="text-[10px] uppercase tracking-[0.2em] text-warm-gray font-medium -mt-0.5">Luxury
                 Stays</span>
             </div>
@@ -334,36 +334,40 @@
 
           <!-- Navigation -->
           <nav class="hidden lg:flex items-center gap-10">
-            <a class="nav-link text-sm font-medium text-charcoal hover:text-primary transition-colors duration-300"
-              href="#">
+            <a id="nav-properties"
+              class="nav-link text-sm font-medium text-charcoal hover:text-primary transition-colors duration-300"
+              href="#featured-properties-section">
               Chỗ ở
             </a>
-            <a class="nav-link text-sm font-medium text-charcoal hover:text-primary transition-colors duration-300"
-              href="#">
+            <a id="nav-destinations"
+              class="nav-link text-sm font-medium text-charcoal hover:text-primary transition-colors duration-300"
+              href="#destinations-section">
               Điểm đến
             </a>
-            <a class="nav-link text-sm font-medium text-charcoal hover:text-primary transition-colors duration-300"
+            <a id="nav-experiences"
+              class="nav-link text-sm font-medium text-charcoal hover:text-primary transition-colors duration-300"
               href="#">
               Trải nghiệm
             </a>
-            <a class="nav-link text-sm font-medium text-charcoal hover:text-primary transition-colors duration-300"
-              href="#">
+            <a id="nav-about"
+              class="nav-link text-sm font-medium text-charcoal hover:text-primary transition-colors duration-300"
+              href="#about-section">
               Về chúng tôi
             </a>
           </nav>
 
           <!-- Action Buttons -->
           <div class="flex items-center gap-3">
-            <button
+            <a href="household.html" id="host-btn"
               class="hidden sm:flex items-center gap-2 px-5 py-2.5 text-sm font-medium text-charcoal hover:text-primary transition-all duration-300">
               <span class="material-symbols-outlined text-lg">home_work</span>
               <span>Đăng cho thuê</span>
-            </button>
-            <button
+            </a>
+            <button id="login-btn"
               class="px-5 py-2.5 text-sm font-medium text-charcoal hover:text-primary transition-colors duration-300">
               Đăng nhập
             </button>
-            <button
+            <button id="register-btn"
               class="btn-premium px-6 py-2.5 bg-primary text-white text-sm font-medium rounded-lg hover:bg-primary-light hover:shadow-elegant transition-all duration-300">
               Đăng ký
             </button>
@@ -378,9 +382,7 @@
       <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden grain-texture">
         <!-- Background Image with Overlay -->
         <div class="absolute inset-0">
-          <img
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCa5Itjlhdexv-gjI7t9awdqMVdkr92EhDBWgF0cFIuX7VpJWRHKS2w5eDWaZsLYBB_NOQaF7dYeaLarzD-KlsHMdpLfKWbXiy3C5JNmBAe0I_b6lv5PhAIYm-r7yYoDv7wOIacS-aZERj2OMWJGcxBNsqO8P40pANFRouULOD0nRIFpk6HDlq9IIjHEZ5UfKmppSwfn9wEbdwdFCbibWvzTA24bk799VNwKvjiaxbIj00NiMO_UtO_T-APZL1pNUI_IfCxIODK1Y4"
-            alt="Luxury villa with ocean view" class="w-full h-full object-cover" />
+          <img src="assets/thumnails.jpg" alt="Luxury villa with ocean view" class="w-full h-full object-cover" />
           <div class="absolute inset-0 bg-gradient-to-b from-charcoal/30 via-charcoal/40 to-charcoal/70"></div>
         </div>
 
@@ -467,7 +469,7 @@
       </section>
 
       <!-- Featured Properties Section -->
-      <section class="py-20 lg:py-28">
+      <section id="featured-properties-section" class="py-20 lg:py-28">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
           <!-- Section Header -->
           <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
@@ -517,7 +519,7 @@
       </section>
 
       <!-- Destinations Section - Magazine Layout -->
-      <section class="py-20 lg:py-28 bg-white">
+      <section id="destinations-section" class="py-20 lg:py-28 bg-white">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
           <!-- Section Header -->
           <div class="text-center mb-16">
@@ -648,18 +650,18 @@
             <span class="italic text-accent-light">tạo nên giá trị mới</span>
           </h2>
           <p class="text-white/80 text-lg max-w-2xl mx-auto mb-10">
-            Gia nhập cộng đồng hàng nghìn chủ nhà trên TripStay và bắt đầu hành trình kinh doanh nghỉ dưỡng của bạn với
+            Gia nhập cộng đồng hàng nghìn chủ nhà trên Aoklevart và bắt đầu hành trình kinh doanh nghỉ dưỡng của bạn với
             sự hỗ trợ chuyên nghiệp.
           </p>
           <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button
+            <a href="household.html"
               class="btn-premium px-8 py-4 bg-accent text-charcoal text-base font-semibold rounded-xl hover:bg-accent-light transition-all duration-300 shadow-elegant">
               Bắt đầu cho thuê
-            </button>
-            <button
+            </a>
+            <a href="household.html"
               class="px-8 py-4 text-white text-base font-medium rounded-xl border border-white/30 hover:bg-white/10 transition-all duration-300">
               Tìm hiểu thêm
-            </button>
+            </a>
           </div>
         </div>
       </section>
@@ -695,7 +697,7 @@
     </main>
 
     <!-- Premium Footer -->
-    <footer class="bg-charcoal text-white">
+    <footer id="about-section" class="bg-charcoal text-white">
       <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-20">
         <div class="grid grid-cols-2 md:grid-cols-5 gap-8 lg:gap-12">
           <!-- Brand Column -->
@@ -703,9 +705,9 @@
             <div class="flex items-center gap-3 mb-6">
               <div class="relative w-10 h-10 flex items-center justify-center">
                 <div class="absolute inset-0 bg-accent rounded-lg transform rotate-45"></div>
-                <span class="relative text-charcoal font-display font-bold text-lg">T</span>
+                <span class="relative text-charcoal font-display font-bold text-lg">A</span>
               </div>
-              <span class="font-display text-xl font-semibold">TripStay</span>
+              <span class="font-display text-xl font-semibold">Aoklevart</span>
             </div>
             <p class="text-white/60 text-sm leading-relaxed mb-6 max-w-xs">
               Nền tảng đặt phòng nghỉ dưỡng hàng đầu Việt Nam, kết nối bạn với những trải nghiệm lưu trú độc đáo và đáng
@@ -738,7 +740,7 @@
 
           <!-- Links Columns -->
           <div>
-            <h4 class="font-semibold text-white mb-5">Về TripStay</h4>
+            <h4 class="font-semibold text-white mb-5">Về Aoklevart</h4>
             <ul class="space-y-3">
               <li><a href="#" class="text-white/60 text-sm hover:text-accent transition-colors duration-300">Giới
                   thiệu</a></li>
@@ -780,10 +782,151 @@
 
         <!-- Bottom Bar -->
         <div class="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p class="text-white/40 text-sm">© 2024 TripStay. All rights reserved.</p>
+          <p class="text-white/40 text-sm">© 2024 Aoklevart. All rights reserved.</p>
           <div class="flex items-center gap-6">
             <span class="text-white/40 text-sm">Ngôn ngữ: Tiếng Việt</span>
             <span class="text-white/40 text-sm">VND (₫)</span>
+          </div>
+
+          <!-- Login Modal -->
+          <div id="login-modal" class="fixed inset-0 z-[60] hidden">
+            <!-- Backdrop -->
+            <div class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity opacity-0" id="login-backdrop">
+            </div>
+
+            <!-- Modal Content -->
+            <div class="relative min-h-screen flex items-center justify-center p-4">
+              <div
+                class="relative w-full max-w-md bg-white rounded-2xl shadow-2xl transform scale-95 opacity-0 transition-all duration-300"
+                id="login-content">
+                <!-- Close Button -->
+                <button id="close-login"
+                  class="absolute top-4 right-4 p-2 rounded-full hover:bg-neutral-100 transition-colors">
+                  <span class="material-symbols-outlined text-neutral-500">close</span>
+                </button>
+
+                <div class="p-8">
+                  <div class="text-center mb-8">
+                    <h2 class="font-display text-2xl font-bold text-charcoal mb-2">Chào mừng trở lại</h2>
+                    <p class="text-warm-gray text-sm">Đăng nhập để tiếp tục trải nghiệm</p>
+                  </div>
+
+                  <form class="space-y-4" onsubmit="event.preventDefault();">
+                    <div>
+                      <label class="block text-sm font-medium text-charcoal mb-1.5">Email</label>
+                      <input type="email" placeholder="name@example.com"
+                        class="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:border-primary focus:ring-primary transition-colors bg-neutral-50">
+                    </div>
+                    <div>
+                      <label class="block text-sm font-medium text-charcoal mb-1.5">Mật khẩu</label>
+                      <input type="password" placeholder="••••••••"
+                        class="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:border-primary focus:ring-primary transition-colors bg-neutral-50">
+                    </div>
+
+                    <div class="flex items-center justify-between text-sm">
+                      <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" class="rounded border-neutral-300 text-primary focus:ring-primary">
+                        <span class="text-warm-gray">Ghi nhớ đăng nhập</span>
+                      </label>
+                      <a href="#" class="text-primary font-medium hover:underline">Quên mật khẩu?</a>
+                    </div>
+
+                    <button
+                      class="w-full py-3.5 bg-primary text-white font-bold rounded-xl hover:bg-primary-light transition-all shadow-lg shadow-primary/20">
+                      Đăng nhập
+                    </button>
+                  </form>
+
+                  <div class="mt-6 pt-6 border-t border-neutral-100">
+                    <div class="grid grid-cols-2 gap-4">
+                      <button
+                        class="flex items-center justify-center gap-2 py-2.5 border border-neutral-200 rounded-xl hover:bg-neutral-50 transition-colors">
+                        <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="w-5 h-5" alt="Google">
+                        <span class="text-sm font-medium text-charcoal">Google</span>
+                      </button>
+                      <button
+                        class="flex items-center justify-center gap-2 py-2.5 border border-neutral-200 rounded-xl hover:bg-neutral-50 transition-colors">
+                        <img src="https://www.svgrepo.com/show/475647/facebook-color.svg" class="w-5 h-5"
+                          alt="Facebook">
+                        <span class="text-sm font-medium text-charcoal">Facebook</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <p class="mt-8 text-center text-sm text-warm-gray">
+                    Chưa có tài khoản?
+                    <button id="switch-to-register" class="text-primary font-bold hover:underline">Đăng ký ngay</button>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Register Modal -->
+          <div id="register-modal" class="fixed inset-0 z-[60] hidden">
+            <!-- Backdrop -->
+            <div class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity opacity-0"
+              id="register-backdrop"></div>
+
+            <!-- Modal Content -->
+            <div class="relative min-h-screen flex items-center justify-center p-4">
+              <div
+                class="relative w-full max-w-md bg-white rounded-2xl shadow-2xl transform scale-95 opacity-0 transition-all duration-300"
+                id="register-content">
+                <!-- Close Button -->
+                <button id="close-register"
+                  class="absolute top-4 right-4 p-2 rounded-full hover:bg-neutral-100 transition-colors">
+                  <span class="material-symbols-outlined text-neutral-500">close</span>
+                </button>
+
+                <div class="p-8">
+                  <div class="text-center mb-8">
+                    <h2 class="font-display text-2xl font-bold text-charcoal mb-2">Tạo tài khoản mới</h2>
+                    <p class="text-warm-gray text-sm">Tham gia cộng đồng Aoklevart ngay hôm nay</p>
+                  </div>
+
+                  <form class="space-y-4" onsubmit="event.preventDefault();">
+                    <div class="grid grid-cols-2 gap-4">
+                      <div>
+                        <label class="block text-sm font-medium text-charcoal mb-1.5">Họ</label>
+                        <input type="text" placeholder="Nguyễn"
+                          class="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:border-primary focus:ring-primary transition-colors bg-neutral-50">
+                      </div>
+                      <div>
+                        <label class="block text-sm font-medium text-charcoal mb-1.5">Tên</label>
+                        <input type="text" placeholder="Văn A"
+                          class="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:border-primary focus:ring-primary transition-colors bg-neutral-50">
+                      </div>
+                    </div>
+                    <div>
+                      <label class="block text-sm font-medium text-charcoal mb-1.5">Email</label>
+                      <input type="email" placeholder="name@example.com"
+                        class="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:border-primary focus:ring-primary transition-colors bg-neutral-50">
+                    </div>
+                    <div>
+                      <label class="block text-sm font-medium text-charcoal mb-1.5">Mật khẩu</label>
+                      <input type="password" placeholder="••••••••"
+                        class="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:border-primary focus:ring-primary transition-colors bg-neutral-50">
+                    </div>
+
+                    <button
+                      class="w-full py-3.5 bg-primary text-white font-bold rounded-xl hover:bg-primary-light transition-all shadow-lg shadow-primary/20">
+                      Đăng ký tài khoản
+                    </button>
+                  </form>
+
+                  <p class="mt-6 text-center text-xs text-warm-gray px-4">
+                    Bằng việc đăng ký, bạn đồng ý với <a href="#" class="text-primary hover:underline">Điều khoản dịch
+                      vụ</a> & <a href="#" class="text-primary hover:underline">Chính sách bảo mật</a> của chúng tôi.
+                  </p>
+
+                  <p class="mt-8 text-center text-sm text-warm-gray">
+                    Đã có tài khoản?
+                    <button id="switch-to-login" class="text-primary font-bold hover:underline">Đăng nhập</button>
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -796,8 +939,98 @@
   <!-- Render Properties -->
   <script src="js/renderProperties.js"></script>
 
-  <!-- Carousel Navigation Script -->
+  <!-- Carousel Navigation Script & Modal Logic -->
   <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // --- Modal Logic ---
+      const loginModal = document.getElementById('login-modal');
+      const registerModal = document.getElementById('register-modal');
+      const loginBtn = document.getElementById('login-btn');
+      const registerBtn = document.getElementById('register-btn');
+      const closeLoginBtn = document.getElementById('close-login');
+      const closeRegisterBtn = document.getElementById('close-register');
+      const switchToRegisterBtn = document.getElementById('switch-to-register');
+      const switchToLoginBtn = document.getElementById('switch-to-login');
+
+      // Helper to open modal with animation
+      const openModal = (modal) => {
+        modal.classList.remove('hidden');
+        // Trigger reflow
+        void modal.offsetWidth;
+
+        const backdrop = modal.querySelector('div[id$="-backdrop"]');
+        const content = modal.querySelector('div[id$="-content"]');
+
+        backdrop.classList.remove('opacity-0');
+        content.classList.remove('opacity-0', 'scale-95');
+        content.classList.add('scale-100');
+
+        document.body.style.overflow = 'hidden';
+      };
+
+      // Helper to close modal with animation
+      const closeModal = (modal) => {
+        const backdrop = modal.querySelector('div[id$="-backdrop"]');
+        const content = modal.querySelector('div[id$="-content"]');
+
+        backdrop.classList.add('opacity-0');
+        content.classList.remove('scale-100');
+        content.classList.add('opacity-0', 'scale-95');
+
+        setTimeout(() => {
+          modal.classList.add('hidden');
+          document.body.style.overflow = '';
+        }, 300);
+      };
+
+      loginBtn.addEventListener('click', () => openModal(loginModal));
+      registerBtn.addEventListener('click', () => openModal(registerModal));
+
+      closeLoginBtn.addEventListener('click', () => closeModal(loginModal));
+      closeRegisterBtn.addEventListener('click', () => closeModal(registerModal));
+
+      // Close on backdrop click
+      loginModal.addEventListener('click', (e) => {
+        if (e.target === loginModal.querySelector('.min-h-screen')) closeModal(loginModal);
+      });
+      registerModal.addEventListener('click', (e) => {
+        if (e.target === registerModal.querySelector('.min-h-screen')) closeModal(registerModal);
+      });
+
+      // Switch modals
+      switchToRegisterBtn.addEventListener('click', () => {
+        closeModal(loginModal);
+        setTimeout(() => openModal(registerModal), 300);
+      });
+
+      switchToLoginBtn.addEventListener('click', () => {
+        closeModal(registerModal);
+        setTimeout(() => openModal(loginModal), 300);
+      });
+
+      // --- Smooth Scroll for Nav Links ---
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href').substring(1);
+          const targetElement = document.getElementById(targetId);
+
+          if (targetElement) {
+            // Account for fixed header height (80px)
+            const headerOffset = 80;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth"
+            });
+          }
+        });
+      });
+
+    });
+
     document.addEventListener('DOMContentLoaded', function () {
       const container = document.getElementById('carousel-container');
       const prevBtn = document.getElementById('carousel-prev');
