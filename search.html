@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Kết quả tìm kiếm - Aoklevart</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect" />
+    <!-- Premium Typography: Playfair Display + DM Sans -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1a3a3a",
+                        "primary-light": "#2d5a5a",
+                        "accent": "#c9a962",
+                        "accent-light": "#e8d5a3",
+                        "cream": "#faf8f5",
+                        "charcoal": "#1c1c1c",
+                        "warm-gray": "#6b6b6b",
+                        "light-border": "rgba(0,0,0,0.06)",
+                    },
+                    fontFamily: {
+                        "display": ["Playfair Display", "serif"],
+                        "body": ["DM Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'elegant': '0 4px 40px rgba(0,0,0,0.08)',
+                        'elegant-lg': '0 10px 60px rgba(0,0,0,0.12)',
+                        'elegant-xl': '0 20px 80px rgba(0,0,0,0.15)',
+                        'inner-soft': 'inset 0 2px 8px rgba(0,0,0,0.04)',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+
+        /* Smooth scrollbar */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        html {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            scroll-behavior: smooth;
+        }
+
+        /* Premium button style */
+        .btn-premium {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .btn-premium::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .btn-premium:hover::before {
+            transform: translateX(100%);
+        }
+
+        /* Smooth underline animation */
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: currentColor;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .nav-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        /* Search input focus */
+        .search-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(201, 169, 98, 0.3);
+        }
+    </style>
+</head>
+
+<body class="bg-cream font-body text-charcoal antialiased">
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+
+        <!-- Premium Header -->
+        <header
+            class="fixed top-0 z-50 w-full bg-cream/95 backdrop-blur-lg border-b border-light-border transition-all duration-500">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="flex items-center justify-between h-20">
+
+                    <!-- Logo -->
+                    <a href="home.html" class="flex items-center gap-3 group">
+                        <div class="relative w-10 h-10 flex items-center justify-center">
+                            <div
+                                class="absolute inset-0 bg-primary rounded-lg transform rotate-45 group-hover:rotate-[50deg] transition-transform duration-500">
+                            </div>
+                            <span class="relative text-white font-display font-bold text-lg">A</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span
+                                class="font-display text-xl font-semibold text-primary tracking-tight">Aoklevart</span>
+                            <span
+                                class="text-[10px] uppercase tracking-[0.2em] text-warm-gray font-medium -mt-0.5">Luxury
+                                Stays</span>
+                        </div>
+                    </a>
+
+                    <!-- Navigation -->
+                    <nav class="hidden lg:flex items-center gap-10">
+                        <a id="nav-properties"
+                            class="nav-link text-sm font-medium text-charcoal hover:text-primary transition-colors duration-300"
+                            href="home.html#featured-properties-section">
+                            Chỗ ở
+                        </a>
+                        <a id="nav-destinations"
+                            class="nav-link text-sm font-medium text-charcoal hover:text-primary transition-colors duration-300"
+                            href="home.html#destinations-section">
+                            Điểm đến
+                        </a>
+                        <a id="nav-experiences"
+                            class="nav-link text-sm font-medium text-charcoal hover:text-primary transition-colors duration-300"
+                            href="#">
+                            Trải nghiệm
+                        </a>
+                        <a id="nav-about"
+                            class="nav-link text-sm font-medium text-charcoal hover:text-primary transition-colors duration-300"
+                            href="home.html#about-section">
+                            Về chúng tôi
+                        </a>
+                    </nav>
+
+                    <!-- Action Buttons -->
+                    <div class="hidden lg:flex items-center gap-3">
+                        <a href="household.html" id="host-btn"
+                            class="flex items-center gap-2 px-5 py-2.5 text-sm font-medium text-charcoal hover:text-primary transition-all duration-300">
+                            <span class="material-symbols-outlined text-lg">home_work</span>
+                            <span>Đăng cho thuê</span>
+                        </a>
+                        <button id="login-btn"
+                            class="px-5 py-2.5 text-sm font-medium text-charcoal hover:text-primary transition-colors duration-300">
+                            Đăng nhập
+                        </button>
+                        <button id="register-btn"
+                            class="btn-premium px-6 py-2.5 bg-primary text-white text-sm font-medium rounded-lg hover:bg-primary-light hover:shadow-elegant transition-all duration-300">
+                            Đăng ký
+                        </button>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn"
+                        class="lg:hidden p-2 text-charcoal hover:bg-neutral-100 rounded-lg transition-colors">
+                        <span class="material-symbols-outlined text-2xl">menu</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu"
+                class="fixed inset-0 z-50 bg-white transform translate-x-full transition-transform duration-300 lg:hidden">
+                <div class="flex flex-col h-full">
+                    <div class="flex items-center justify-between p-6 border-b border-neutral-100">
+                        <span class="font-display text-xl font-bold text-primary">Menu</span>
+                        <button id="close-mobile-menu"
+                            class="p-2 text-charcoal hover:bg-neutral-100 rounded-full transition-colors">
+                            <span class="material-symbols-outlined">close</span>
+                        </button>
+                    </div>
+                    <div class="flex-1 overflow-y-auto p-6 space-y-6">
+                        <nav class="flex flex-col gap-4">
+                            <a href="home.html#featured-properties-section"
+                                class="text-lg font-medium text-charcoal hover:text-primary">Chỗ
+                                ở</a>
+                            <a href="home.html#destinations-section"
+                                class="text-lg font-medium text-charcoal hover:text-primary">Điểm đến</a>
+                            <a href="#" class="text-lg font-medium text-charcoal hover:text-primary">Trải nghiệm</a>
+                            <a href="home.html#about-section"
+                                class="text-lg font-medium text-charcoal hover:text-primary">Về chúng tôi</a>
+                        </nav>
+                        <hr class="border-neutral-100">
+                        <div class="flex flex-col gap-4">
+                            <a href="household.html"
+                                class="flex items-center gap-3 text-lg font-medium text-charcoal hover:text-primary">
+                                <span class="material-symbols-outlined">home_work</span>
+                                Đăng cho thuê
+                            </a>
+                            <button id="mobile-login-btn"
+                                class="w-full py-3 text-center border border-neutral-200 rounded-xl font-medium text-charcoal hover:bg-neutral-50">
+                                Đăng nhập
+                            </button>
+                            <button id="mobile-register-btn"
+                                class="w-full py-3 text-center bg-primary text-white rounded-xl font-medium hover:bg-primary-light shadow-lg shadow-primary/20">
+                                Đăng ký
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex-grow pt-28 pb-12">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="mb-8">
+                    <label class="flex flex-col w-full">
+                        <div
+                            class="flex w-full flex-1 items-stretch rounded-xl h-14 shadow-elegant border border-light-border bg-white">
+                            <div class="text-warm-gray flex bg-white items-center justify-center pl-4 rounded-l-xl">
+                                <span class="material-symbols-outlined">search</span>
+                            </div>
+                            <input
+                                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden text-charcoal focus:outline-0 focus:ring-0 border-none bg-white h-full placeholder:text-warm-gray px-2 text-base font-normal leading-normal rounded-r-xl"
+                                value="Đà Nẵng | Nhận phòng: 25/12 - Trả phòng: 30/12 | 2 khách" />
+                        </div>
+                    </label>
+                </div>
+                <div class="flex flex-col lg:flex-row gap-8">
+                    <!-- Filter Sidebar -->
+                    <aside class="w-full lg:w-1/4 xl:w-1/5">
+                        <div class="sticky top-24 space-y-6">
+                            <div class="p-4 border border-light-border rounded-xl bg-white shadow-sm">
+                                <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg object-cover mb-4"
+                                    data-alt="Map showing locations of accommodations in Da Nang"
+                                    data-location="Da Nang"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBrcGK9wFZU5KZSnD4Ebw2i9p5mct1cJ3DywgJeQKIHs58dvC1Bm4Xz5lWwmga45NWxYsMX6FQaeb6L791gxtTo7CxZDcABbWrwZp3QxuOT4Xm-6JcsrPFH-BkDbZtnmSffUdUy9v_vawRQ2ZKHpFoykb9_ap7kvOo9uuOExX6InW4wbInS2NL1LNUTZ42wTvCMrCzWiTjo8uW2xiWbeICosN58u50cBM6_IffQEpeGgVXqvQHArK1xfSZkkOluyIX_IuDtCXaRCDk");'>
+                                </div>
+                                <button
+                                    class="w-full flex items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary/10 text-primary text-sm font-bold hover:bg-primary/20 transition-colors">
+                                    <span class="material-symbols-outlined">map</span>
+                                    <span>Xem bản đồ</span>
+                                </button>
+                            </div>
+                            <div class="space-y-6 p-4 border border-light-border rounded-xl bg-white shadow-sm">
+                                <h2 class="text-lg font-bold text-charcoal">Bộ lọc</h2>
+                                <!-- Price Range -->
+                                <div>
+                                    <h3 class="font-semibold mb-3 text-charcoal">Khoảng giá</h3>
+                                    <input class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+                                        max="10000000" min="0" style="--tw-accent-color: var(--primary-color, #1a3a3a);"
+                                        type="range" value="5000000" />
+                                    <div class="flex justify-between text-sm text-warm-gray mt-2">
+                                        <span>0đ</span>
+                                        <span>10.000.000đ+</span>
+                                    </div>
+                                </div>
+                                <hr class="border-light-border" />
+                                <!-- Property Type -->
+                                <div>
+                                    <h3 class="font-semibold mb-3 text-charcoal">Loại hình chỗ ở</h3>
+                                    <div class="space-y-2">
+                                        <label class="flex items-center space-x-2 cursor-pointer">
+                                            <input checked="" class="form-radio text-primary focus:ring-primary/50"
+                                                name="property_type" type="radio" />
+                                            <span class="text-sm text-charcoal">Tất cả</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2 cursor-pointer">
+                                            <input class="form-radio text-primary focus:ring-primary/50"
+                                                name="property_type" type="radio" />
+                                            <span class="text-sm text-charcoal">Khách sạn</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2 cursor-pointer">
+                                            <input class="form-radio text-primary focus:ring-primary/50"
+                                                name="property_type" type="radio" />
+                                            <span class="text-sm text-charcoal">Căn hộ</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2 cursor-pointer">
+                                            <input class="form-radio text-primary focus:ring-primary/50"
+                                                name="property_type" type="radio" />
+                                            <span class="text-sm text-charcoal">Biệt thự</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <hr class="border-light-border" />
+                                <!-- Amenities -->
+                                <div>
+                                    <h3 class="font-semibold mb-3 text-charcoal">Tiện ích</h3>
+                                    <div class="space-y-2">
+                                        <label class="flex items-center space-x-2 cursor-pointer">
+                                            <input checked=""
+                                                class="form-checkbox rounded text-primary focus:ring-primary/50"
+                                                type="checkbox" />
+                                            <span class="text-sm text-charcoal">Wi-Fi</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2 cursor-pointer">
+                                            <input class="form-checkbox rounded text-primary focus:ring-primary/50"
+                                                type="checkbox" />
+                                            <span class="text-sm text-charcoal">Bể bơi</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2 cursor-pointer">
+                                            <input class="form-checkbox rounded text-primary focus:ring-primary/50"
+                                                type="checkbox" />
+                                            <span class="text-sm text-charcoal">Chỗ đỗ xe</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <hr class="border-light-border" />
+                                <!-- Rating -->
+                                <div>
+                                    <h3 class="font-semibold mb-3 text-charcoal">Xếp hạng</h3>
+                                    <div class="flex space-x-2">
+                                        <button
+                                            class="flex-1 border rounded-lg py-2 text-sm font-semibold border-gray-300 text-charcoal hover:border-primary hover:text-primary transition-colors">Bất
+                                            kỳ</button>
+                                        <button
+                                            class="flex-1 border rounded-lg py-2 text-sm font-semibold border-gray-300 text-charcoal hover:border-primary hover:text-primary transition-colors">7+</button>
+                                        <button
+                                            class="flex-1 border rounded-lg py-2 text-sm font-semibold border-primary text-primary bg-primary/10">8+</button>
+                                        <button
+                                            class="flex-1 border rounded-lg py-2 text-sm font-semibold border-gray-300 text-charcoal hover:border-primary hover:text-primary transition-colors">9+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                    <!-- Results Area -->
+                    <div class="w-full lg:w-3/4 xl:w-4/5">
+                        <div class="flex flex-wrap justify-between items-center gap-4 mb-6">
+                            <div class="flex flex-col">
+                                <h1 class="text-3xl font-display font-bold tracking-tight text-charcoal">Kết quả
+                                    tìm kiếm cho Đà Nẵng</h1>
+                                <p class="text-base text-warm-gray">Tìm thấy 250 chỗ ở</p>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="relative">
+                                    <select
+                                        class="form-select appearance-none rounded-lg border-gray-300 bg-white text-charcoal pl-3 pr-8 focus:border-primary focus:ring-primary/50 text-sm">
+                                        <option>Sắp xếp: Phổ biến nhất</option>
+                                        <option>Giá tăng dần</option>
+                                        <option>Giá giảm dần</option>
+                                        <option>Xếp hạng cao nhất</option>
+                                    </select>
+                                    <div
+                                        class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-charcoal">
+                                        <span class="material-symbols-outlined text-base">expand_more</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center border border-gray-300 rounded-lg">
+                                    <button class="p-2 text-primary bg-primary/10 rounded-l-md">
+                                        <span class="material-symbols-outlined">grid_view</span>
+                                    </button>
+                                    <button class="p-2 text-warm-gray hover:text-primary rounded-r-md">
+                                        <span class="material-symbols-outlined">view_list</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Accommodation Cards Grid -->
+                        <div id="search-results-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                            <!-- Cards will be rendered here dynamically -->
+                        </div>
+                        <!-- Pagination -->
+                        <nav class="flex items-center justify-center mt-8">
+                            <ul class="flex items-center -space-x-px h-10 text-base">
+                                <li>
+                                    <a class="flex items-center justify-center px-4 h-10 ms-0 leading-tight text-warm-gray bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-charcoal"
+                                        href="#">
+                                        <span class="material-symbols-outlined">chevron_left</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="flex items-center justify-center px-4 h-10 leading-tight text-primary bg-primary/10 border border-primary hover:bg-primary/20 hover:text-primary"
+                                        href="#">1</a>
+                                </li>
+                                <li>
+                                    <a class="flex items-center justify-center px-4 h-10 leading-tight text-warm-gray bg-white border border-gray-300 hover:bg-gray-100 hover:text-charcoal"
+                                        href="#">2</a>
+                                </li>
+                                <li>
+                                    <a class="flex items-center justify-center px-4 h-10 leading-tight text-warm-gray bg-white border border-gray-300 hover:bg-gray-100 hover:text-charcoal"
+                                        href="#">3</a>
+                                </li>
+                                <li>
+                                    <a class="flex items-center justify-center px-4 h-10 leading-tight text-warm-gray bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-charcoal"
+                                        href="#">
+                                        <span class="material-symbols-outlined">chevron_right</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+    <!-- Carousel Navigation Script & Modal Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Modal Logic ---
+            const loginModal = document.getElementById('login-modal');
+            const registerModal = document.getElementById('register-modal');
+            const loginBtn = document.getElementById('login-btn');
+            const registerBtn = document.getElementById('register-btn');
+            const closeLoginBtn = document.getElementById('close-login');
+            const closeRegisterBtn = document.getElementById('close-register');
+            const switchToRegisterBtn = document.getElementById('switch-to-register');
+            const switchToLoginBtn = document.getElementById('switch-to-login');
+
+            // Mobile Menu Logic
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const closeMobileMenuBtn = document.getElementById('close-mobile-menu');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLoginBtn = document.getElementById('mobile-login-btn');
+            const mobileRegisterBtn = document.getElementById('mobile-register-btn');
+
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.remove('translate-x-full');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+
+            if (closeMobileMenuBtn) {
+                closeMobileMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.add('translate-x-full');
+                    document.body.style.overflow = '';
+                });
+            }
+
+            if (mobileLoginBtn) {
+                mobileLoginBtn.addEventListener('click', () => {
+                    mobileMenu.classList.add('translate-x-full');
+                    openModal(loginModal);
+                });
+            }
+
+            if (mobileRegisterBtn) {
+                mobileRegisterBtn.addEventListener('click', () => {
+                    mobileMenu.classList.add('translate-x-full');
+                    openModal(registerModal);
+                });
+            }
+
+            // Helper to open modal with animation
+            const openModal = (modal) => {
+                modal.classList.remove('hidden');
+                // Trigger reflow
+                void modal.offsetWidth;
+
+                const backdrop = modal.querySelector('div[id$="-backdrop"]');
+                const content = modal.querySelector('div[id$="-content"]');
+
+                backdrop.classList.remove('opacity-0');
+                content.classList.remove('opacity-0', 'scale-95');
+                content.classList.add('scale-100');
+
+                document.body.style.overflow = 'hidden';
+            };
+
+            // Helper to close modal with animation
+            const closeModal = (modal) => {
+                const backdrop = modal.querySelector('div[id$="-backdrop"]');
+                const content = modal.querySelector('div[id$="-content"]');
+
+                backdrop.classList.add('opacity-0');
+                content.classList.remove('scale-100');
+                content.classList.add('opacity-0', 'scale-95');
+
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                    document.body.style.overflow = '';
+                }, 300);
+            };
+
+            loginBtn.addEventListener('click', () => openModal(loginModal));
+            registerBtn.addEventListener('click', () => openModal(registerModal));
+
+            closeLoginBtn.addEventListener('click', () => closeModal(loginModal));
+            closeRegisterBtn.addEventListener('click', () => closeModal(registerModal));
+
+            // Close on backdrop click
+            loginModal.addEventListener('click', (e) => {
+                if (e.target === loginModal.querySelector('.min-h-screen')) closeModal(loginModal);
+            });
+            registerModal.addEventListener('click', (e) => {
+                if (e.target === registerModal.querySelector('.min-h-screen')) closeModal(registerModal);
+            });
+
+            // Switch modals
+            switchToRegisterBtn.addEventListener('click', () => {
+                closeModal(loginModal);
+                setTimeout(() => openModal(registerModal), 300);
+            });
+
+            switchToLoginBtn.addEventListener('click', () => {
+                closeModal(registerModal);
+                setTimeout(() => openModal(loginModal), 300);
+            });
+
+            // Populate search input from URL query
+            const urlParams = new URLSearchParams(window.location.search);
+            const query = urlParams.get('q');
+            if (query) {
+                const searchInput = document.querySelector('.form-input');
+                if (searchInput) {
+                    searchInput.value = decodeURIComponent(query);
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -12,7 +12,9 @@ document.addEventListener('DOMContentLoaded', function () {
     featuredPropertiesContainer.innerHTML = '';
 
     // Render tất cả properties từ data
-    window.properties.forEach((property, index) => {
+    // Render top 10 properties từ data
+    const featuredProperties = window.properties.slice(0, 10);
+    featuredProperties.forEach((property, index) => {
         const propertyCard = createPropertyCard(property, index);
         featuredPropertiesContainer.appendChild(propertyCard);
     });
@@ -20,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Tạo carousel indicators dựa trên số lượng properties
     if (carouselIndicatorsContainer) {
         carouselIndicatorsContainer.innerHTML = '';
-        const totalProperties = window.properties.length;
+        const totalProperties = featuredProperties.length;
 
         for (let i = 0; i < totalProperties; i++) {
             const indicator = document.createElement('button');

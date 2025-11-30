@@ -461,51 +461,21 @@
             <div class="bg-white/95 backdrop-blur-xl rounded-2xl shadow-elegant-xl p-2">
               <div class="grid grid-cols-1 md:grid-cols-12 gap-2">
                 <!-- Location -->
-                <div class="md:col-span-4 relative">
+                <div class="md:col-span-9 relative">
                   <div
                     class="flex items-center h-14 px-5 rounded-xl bg-cream/50 hover:bg-cream transition-colors duration-300">
                     <span class="material-symbols-outlined text-accent mr-3">location_on</span>
-                    <input type="text" placeholder="Bạn muốn đến đâu?"
+                    <input type="text" id="home-search-input" placeholder="Bạn muốn đến đâu?"
                       class="search-input w-full bg-transparent text-charcoal placeholder-warm-gray text-sm font-medium border-none focus:ring-0" />
                   </div>
                 </div>
 
-                <!-- Divider -->
-                <div class="hidden md:flex items-center justify-center">
-                  <div class="w-px h-8 bg-light-border"></div>
-                </div>
-
-                <!-- Check-in -->
-                <div class="md:col-span-2">
-                  <div
-                    class="flex items-center h-14 px-4 rounded-xl bg-cream/50 hover:bg-cream transition-colors duration-300">
-                    <span class="material-symbols-outlined text-accent mr-2 text-xl">calendar_today</span>
-                    <input type="text" placeholder="Nhận phòng"
-                      class="search-input w-full bg-transparent text-charcoal placeholder-warm-gray text-sm font-medium border-none focus:ring-0" />
-                  </div>
-                </div>
-
-                <!-- Check-out -->
-                <div class="md:col-span-2">
-                  <div
-                    class="flex items-center h-14 px-4 rounded-xl bg-cream/50 hover:bg-cream transition-colors duration-300">
-                    <span class="material-symbols-outlined text-accent mr-2 text-xl">event</span>
-                    <input type="text" placeholder="Trả phòng"
-                      class="search-input w-full bg-transparent text-charcoal placeholder-warm-gray text-sm font-medium border-none focus:ring-0" />
-                  </div>
-                </div>
-
-                <!-- Guests & Search Button -->
-                <div class="md:col-span-3 flex gap-2">
-                  <div
-                    class="flex-1 flex items-center h-14 px-4 rounded-xl bg-cream/50 hover:bg-cream transition-colors duration-300">
-                    <span class="material-symbols-outlined text-accent mr-2 text-xl">group</span>
-                    <input type="text" placeholder="Khách"
-                      class="search-input w-full bg-transparent text-charcoal placeholder-warm-gray text-sm font-medium border-none focus:ring-0" />
-                  </div>
-                  <button
-                    class="btn-premium flex items-center justify-center w-14 h-14 bg-primary rounded-xl text-white hover:bg-primary-light transition-all duration-300">
+                <!-- Search Button -->
+                <div class="md:col-span-3">
+                  <button id="home-search-btn"
+                    class="btn-premium flex items-center justify-center w-full h-14 bg-primary rounded-xl text-white hover:bg-primary-light transition-all duration-300 gap-2">
                     <span class="material-symbols-outlined">search</span>
+                    <span class="font-medium">Tìm kiếm</span>
                   </button>
                 </div>
               </div>
@@ -600,7 +570,7 @@
                 <p class="text-white/80 text-sm max-w-md mb-4 hidden md:block">Thành phố ngàn hoa với khí hậu mát mẻ
                   quanh năm, kiến trúc Pháp cổ kính và những đồi thông bạt ngàn.</p>
                 <div class="flex items-center gap-2 text-white/90">
-                  <span class="text-sm font-medium">156 chỗ ở</span>
+                  <span class="text-sm font-medium">Chi tiết</span>
                   <span
                     class="material-symbols-outlined text-lg transform group-hover:translate-x-1 transition-transform duration-300">arrow_forward</span>
                 </div>
@@ -619,7 +589,7 @@
                 <div class="absolute bottom-0 left-0 right-0 p-6">
                   <h3 class="font-display text-2xl font-semibold text-white mb-1">Hội An</h3>
                   <div class="flex items-center gap-2 text-white/90">
-                    <span class="text-sm">89 chỗ ở</span>
+                    <span class="text-sm">Chi tiết</span>
                     <span
                       class="material-symbols-outlined text-lg transform group-hover:translate-x-1 transition-transform duration-300">arrow_forward</span>
                   </div>
@@ -636,7 +606,7 @@
                 <div class="absolute bottom-0 left-0 right-0 p-6">
                   <h3 class="font-display text-2xl font-semibold text-white mb-1">Sa Pa</h3>
                   <div class="flex items-center gap-2 text-white/90">
-                    <span class="text-sm">67 chỗ ở</span>
+                    <span class="text-sm">Chi tiết</span>
                     <span
                       class="material-symbols-outlined text-lg transform group-hover:translate-x-1 transition-transform duration-300">arrow_forward</span>
                   </div>
@@ -653,19 +623,25 @@
               <div class="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-charcoal/10 to-transparent"></div>
               <div class="absolute bottom-0 left-0 right-0 p-5">
                 <h3 class="font-display text-xl font-semibold text-white mb-1">Đà Nẵng</h3>
-                <span class="text-white/80 text-sm">124 chỗ ở</span>
+                <div class="flex items-center gap-2 text-white/90">
+                  <span class="text-sm font-medium">Chi tiết</span>
+                  <span
+                    class="material-symbols-outlined text-lg transform group-hover:translate-x-1 transition-transform duration-300">arrow_forward</span>
+                </div>
               </div>
             </div>
 
             <div
               class="destination-card col-span-6 md:col-span-4 group relative h-[180px] md:h-[220px] rounded-2xl overflow-hidden cursor-pointer">
-              <img
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCa5Itjlhdexv-gjI7t9awdqMVdkr92EhDBWgF0cFIuX7VpJWRHKS2w5eDWaZsLYBB_NOQaF7dYeaLarzD-KlsHMdpLfKWbXiy3C5JNmBAe0I_b6lv5PhAIYm-r7yYoDv7wOIacS-aZERj2OMWJGcxBNsqO8P40pANFRouULOD0nRIFpk6HDlq9IIjHEZ5UfKmppSwfn9wEbdwdFCbibWvzTA24bk799VNwKvjiaxbIj00NiMO_UtO_T-APZL1pNUI_IfCxIODK1Y4"
-                alt="Phú Quốc" class="image-zoom w-full h-full object-cover" />
+              <img src="assets/phan_thiet.png" alt="Phan Thiết" class="image-zoom w-full h-full object-cover" />
               <div class="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-charcoal/10 to-transparent"></div>
               <div class="absolute bottom-0 left-0 right-0 p-5">
-                <h3 class="font-display text-xl font-semibold text-white mb-1">Phú Quốc</h3>
-                <span class="text-white/80 text-sm">98 chỗ ở</span>
+                <h3 class="font-display text-xl font-semibold text-white mb-1">Phan Thiết</h3>
+                <div class="flex items-center gap-2 text-white/90">
+                  <span class="text-sm font-medium">Chi tiết</span>
+                  <span
+                    class="material-symbols-outlined text-lg transform group-hover:translate-x-1 transition-transform duration-300">arrow_forward</span>
+                </div>
               </div>
             </div>
 
@@ -677,7 +653,11 @@
               <div class="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-charcoal/10 to-transparent"></div>
               <div class="absolute bottom-0 left-0 right-0 p-5">
                 <h3 class="font-display text-xl font-semibold text-white mb-1">Nha Trang</h3>
-                <span class="text-white/80 text-sm">112 chỗ ở</span>
+                <div class="flex items-center gap-2 text-white/90">
+                  <span class="text-sm font-medium">Chi tiết</span>
+                  <span
+                    class="material-symbols-outlined text-lg transform group-hover:translate-x-1 transition-transform duration-300">arrow_forward</span>
+                </div>
               </div>
             </div>
           </div>
@@ -1145,6 +1125,35 @@
 
       container.addEventListener('scroll', updateButtonStates);
       updateButtonStates();
+    });
+
+    // Search Redirection Logic
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchBtn = document.getElementById('home-search-btn');
+      const searchInput = document.getElementById('home-search-input');
+
+      if (searchBtn && searchInput) {
+        // Handle click
+        searchBtn.addEventListener('click', () => {
+          const query = searchInput.value.trim();
+          if (query) {
+            window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+          } else {
+            // Optional: Focus input if empty
+            searchInput.focus();
+          }
+        });
+
+        // Handle Enter key
+        searchInput.addEventListener('keypress', (e) => {
+          if (e.key === 'Enter') {
+            const query = searchInput.value.trim();
+            if (query) {
+              window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+            }
+          }
+        });
+      }
     });
   </script>
   <script src="js/scrollspy.js"></script>
