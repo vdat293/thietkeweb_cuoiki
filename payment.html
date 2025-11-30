@@ -48,6 +48,20 @@
                 'GRAD' 0,
                 'opsz' 24
         }
+
+        /* Smooth scrollbar - HIDDEN as per request */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for IE, Edge and Firefox */
+        html {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+            scroll-behavior: smooth;
+        }
     </style>
     <!-- Import data -->
     <script src="js/data.js"></script>
@@ -322,6 +336,7 @@
             contentElement.classList.remove('hidden');
         });
     </script>
+    <script src="js/scrollspy.js"></script>
 </body>
 
 </html>
