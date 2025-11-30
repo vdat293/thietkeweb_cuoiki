@@ -129,9 +129,9 @@
                     </nav>
 
                     <!-- Action Buttons -->
-                    <div class="flex items-center gap-3">
+                    <div class="hidden lg:flex items-center gap-3">
                         <a href="household.html" id="host-btn"
-                            class="hidden sm:flex items-center gap-2 px-5 py-2.5 text-sm font-medium text-charcoal hover:text-primary transition-all duration-300">
+                            class="flex items-center gap-2 px-5 py-2.5 text-sm font-medium text-charcoal hover:text-primary transition-all duration-300">
                             <span class="material-symbols-outlined text-lg">home_work</span>
                             <span>Đăng cho thuê</span>
                         </a>
@@ -144,282 +144,322 @@
                             Đăng ký
                         </button>
                     </div>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn"
+                        class="lg:hidden p-2 text-charcoal hover:bg-neutral-100 rounded-lg transition-colors">
+                        <span class="material-symbols-outlined text-2xl">menu</span>
+                    </button>
                 </div>
             </div>
-        </header>
-        <main class="flex h-full grow flex-col pt-20">
-            <div class="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 py-8">
-                <div id="loading" class="text-center py-20 hidden">
-                    <p>Đang tải thông tin...</p>
-                </div>
-                <div id="error-message" class="text-center py-20 hidden">
-                    <h2 class="text-2xl font-bold text-red-600">Không tìm thấy chỗ ở</h2>
-                    <p class="mt-4">Xin lỗi, chúng tôi không tìm thấy thông tin chỗ ở bạn yêu cầu.</p>
-                    <a href="home.html"
-                        class="mt-6 inline-block px-6 py-3 bg-primary text-white rounded-lg font-bold">Quay lại trang
-                        chủ</a>
-                </div>
 
-                <div id="property-content" class="flex flex-col gap-6 hidden">
-                    <div class="flex flex-col gap-2">
-                        <div class="flex flex-wrap gap-2">
-                            <a class="text-neutral-500 dark:text-neutral-200 text-sm font-medium leading-normal hover:text-primary"
-                                href="home.html">Trang chủ</a>
-                            <span
-                                class="text-neutral-500 dark:text-neutral-200 text-sm font-medium leading-normal">/</span>
-                            <a class="text-neutral-500 dark:text-neutral-200 text-sm font-medium leading-normal hover:text-primary"
-                                href="#" id="breadcrumb-location">Địa điểm</a>
-                            <span
-                                class="text-neutral-500 dark:text-neutral-200 text-sm font-medium leading-normal">/</span>
-                            <span class="text-neutral-700 dark:text-white text-sm font-medium leading-normal"
-                                id="breadcrumb-name">Tên chỗ ở</span>
-                        </div>
-                        <div class="flex flex-wrap justify-between items-start gap-4">
-                            <div class="flex flex-col gap-1">
-                                <h1 id="property-name"
-                                    class="text-neutral-700 dark:text-white text-3xl font-bold leading-tight tracking-tight">
-                                    Tên chỗ ở</h1>
-                                <div class="flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-200">
-                                    <span class="material-symbols-outlined text-accent-gold !text-lg"
-                                        style="font-variation-settings: 'FILL' 1;">star</span>
-                                    <span class="font-bold text-neutral-700 dark:text-white"
-                                        id="property-rating">0.0</span>
-                                    <span id="property-reviews">(0 đánh giá)</span>
-                                    <span class="font-bold">·</span>
-                                    <a class="font-bold underline text-neutral-700 dark:text-white hover:text-primary"
-                                        href="#" id="property-location-link">Vị trí</a>
-                                </div>
-                            </div>
-                            <div class="flex gap-2">
-                                <button
-                                    class="flex items-center gap-2 px-3 py-2 text-neutral-700 dark:text-white rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-700">
-                                    <span class="material-symbols-outlined !text-xl">ios_share</span>
-                                    <span class="text-sm font-medium">Chia sẻ</span>
-                                </button>
-                                <button
-                                    class="flex items-center gap-2 px-3 py-2 text-neutral-700 dark:text-white rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-700">
-                                    <span class="material-symbols-outlined !text-xl">favorite</span>
-                                    <span class="text-sm font-medium">Lưu</span>
-                                </button>
-                            </div>
-                        </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu"
+                class="fixed inset-0 z-50 bg-white transform translate-x-full transition-transform duration-300 lg:hidden">
+                <div class="flex flex-col h-full">
+                    <div class="flex items-center justify-between p-6 border-b border-neutral-100">
+                        <span class="font-display text-xl font-bold text-primary">Menu</span>
+                        <button id="close-mobile-menu"
+                            class="p-2 text-charcoal hover:bg-neutral-100 rounded-full transition-colors">
+                            <span class="material-symbols-outlined">close</span>
+                        </button>
                     </div>
-                    <div class="relative">
-                        <div class="grid grid-cols-4 grid-rows-2 gap-2 h-[550px]">
-                            <div class="col-span-4 sm:col-span-2 row-span-2 rounded-xl overflow-hidden">
-                                <div id="img-main" class="w-full h-full bg-center bg-no-repeat bg-cover bg-neutral-200">
-                                </div>
-                            </div>
-                            <div class="col-span-2 sm:col-span-1 row-span-1 rounded-xl overflow-hidden hidden sm:block">
-                                <div id="img-gallery-0"
-                                    class="w-full h-full bg-center bg-no-repeat bg-cover bg-neutral-200">
-                                </div>
-                            </div>
-                            <div class="col-span-2 sm:col-span-1 row-span-1 rounded-xl overflow-hidden hidden sm:block">
-                                <div id="img-gallery-1"
-                                    class="w-full h-full bg-center bg-no-repeat bg-cover bg-neutral-200">
-                                </div>
-                            </div>
-                            <div class="col-span-2 sm:col-span-1 row-span-1 rounded-xl overflow-hidden hidden sm:block">
-                                <div id="img-gallery-2"
-                                    class="w-full h-full bg-center bg-no-repeat bg-cover bg-neutral-200">
-                                </div>
-                            </div>
-                            <div class="col-span-2 sm:col-span-1 row-span-1 rounded-xl overflow-hidden hidden sm:block">
-                                <div id="img-gallery-3"
-                                    class="w-full h-full bg-center bg-no-repeat bg-cover bg-neutral-200">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="absolute bottom-4 right-4">
-                            <button id="view-all-photos-btn"
-                                class="flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-background-light dark:bg-background-dark text-neutral-700 dark:text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] border border-neutral-200 dark:border-neutral-700 shadow-sm hover:shadow-md">
-                                <span class="material-symbols-outlined !text-xl">collections</span>
-                                <span>Xem tất cả ảnh</span>
+                    <div class="flex-1 overflow-y-auto p-6 space-y-6">
+                        <nav class="flex flex-col gap-4">
+                            <a href="home.html#featured-properties-section"
+                                class="text-lg font-medium text-charcoal hover:text-primary">Chỗ ở</a>
+                            <a href="home.html#destinations-section"
+                                class="text-lg font-medium text-charcoal hover:text-primary">Điểm đến</a>
+                            <a href="#" class="text-lg font-medium text-charcoal hover:text-primary">Trải nghiệm</a>
+                            <a href="home.html#about-section"
+                                class="text-lg font-medium text-charcoal hover:text-primary">Về chúng tôi</a>
+                        </nav>
+                        <hr class="border-neutral-100">
+                        <div class="flex flex-col gap-4">
+                            <a href="household.html"
+                                class="flex items-center gap-3 text-lg font-medium text-charcoal hover:text-primary">
+                                <span class="material-symbols-outlined">home_work</span>
+                                Đăng cho thuê
+                            </a>
+                            <button id="mobile-login-btn"
+                                class="w-full py-3 text-center border border-neutral-200 rounded-xl font-medium text-charcoal hover:bg-neutral-50">
+                                Đăng nhập
+                            </button>
+                            <button id="mobile-register-btn"
+                                class="w-full py-3 text-center bg-primary text-white rounded-xl font-medium hover:bg-primary-light shadow-lg shadow-primary/20">
+                                Đăng ký
                             </button>
                         </div>
                     </div>
-                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-24 mt-6">
-                        <div class="lg:col-span-2 flex flex-col gap-8">
-                            <div class="flex flex-col gap-4 pb-8 border-b border-neutral-200 dark:border-neutral-700">
-                                <div class="flex justify-between items-center">
-                                    <div>
-                                        <h2 class="text-xl font-bold text-neutral-700 dark:text-white" id="host-info">
-                                            Toàn bộ biệt thự.
-                                            Chủ nhà...</h2>
-                                        <p class="text-neutral-500 dark:text-neutral-200">10 khách · 5 phòng ngủ · 6
-                                            giường · 5 phòng tắm</p>
-                                    </div>
-                                    <img id="host-avatar" class="w-14 h-14 rounded-full object-cover" src="" />
-                                </div>
-                                <div class="flex items-center gap-2 mt-2" id="superhost-badge">
-                                    <span
-                                        class="inline-flex items-center justify-center rounded-full bg-accent-gold/10 px-3 py-1 text-xs font-bold text-accent-gold">
-                                        Chủ nhà siêu cấp
-                                    </span>
-                                    <div class="flex items-center gap-1 text-neutral-500 dark:text-neutral-200 text-sm">
-                                        <span class="material-symbols-outlined text-accent-gold !text-base"
-                                            style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
-                                        <span>Đánh giá xuất sắc</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="pb-8 border-b border-neutral-200 dark:border-neutral-700">
-                                <p class="text-neutral-500 dark:text-neutral-200 leading-relaxed"
-                                    id="property-description">
-                                    Mô tả...
-                                </p>
-                                <a id="description-toggle-btn"
-                                    class="mt-4 inline-flex items-center gap-1 font-bold text-neutral-700 dark:text-white hover:text-primary hidden cursor-pointer">
-                                    <span>Hiển thị thêm</span>
-                                    <span class="material-symbols-outlined !text-xl">chevron_right</span>
-                                </a>
-                            </div>
-                            <div class="pb-8 border-b border-neutral-200 dark:border-neutral-700">
-                                <h2 class="text-xl font-bold text-neutral-700 dark:text-white mb-4">Tiện ích chính</h2>
-                                <div class="grid grid-cols-2 gap-4" id="amenities-list">
-                                </div>
-                                <button id="show-amenities-btn"
-                                    class="mt-6 flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-transparent text-neutral-700 dark:text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] border border-neutral-700 dark:border-white hover:bg-neutral-100 dark:hover:bg-neutral-700">
-                                    <span>Hiển thị tất cả tiện nghi</span>
-                                </button>
-                            </div>
-                            <div class="pb-8 border-b border-neutral-200 dark:border-neutral-700">
-                                <div class="flex items-center gap-2 mb-6">
-                                    <span class="material-symbols-outlined text-accent-gold !text-2xl"
-                                        style="font-variation-settings: 'FILL' 1;">star</span>
-                                    <h2 class="text-xl font-bold text-neutral-700 dark:text-white" id="reviews-summary">
-                                        4.98 (250 đánh giá)
-                                    </h2>
-                                </div>
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
-                                    <div class="flex justify-between items-center gap-4">
-                                        <span class="text-neutral-500 dark:text-neutral-200">Sạch sẽ</span>
-                                        <div class="flex items-center gap-2 flex-1">
-                                            <div class="w-full bg-neutral-200 dark:bg-neutral-700 rounded-full h-1">
-                                                <div class="bg-neutral-700 dark:bg-white h-1 rounded-full"
-                                                    style="width: 100%"></div>
-                                            </div>
-                                            <span
-                                                class="font-medium text-sm text-neutral-700 dark:text-white">5.0</span>
-                                        </div>
-                                    </div>
-                                    <div class="flex justify-between items-center gap-4">
-                                        <span class="text-neutral-500 dark:text-neutral-200">Độ chính xác</span>
-                                        <div class="flex items-center gap-2 flex-1">
-                                            <div class="w-full bg-neutral-200 dark:bg-neutral-700 rounded-full h-1">
-                                                <div class="bg-neutral-700 dark:bg-white h-1 rounded-full"
-                                                    style="width: 100%"></div>
-                                            </div>
-                                            <span
-                                                class="font-medium text-sm text-neutral-700 dark:text-white">5.0</span>
-                                        </div>
-                                    </div>
-                                    <div class="flex justify-between items-center gap-4">
-                                        <span class="text-neutral-500 dark:text-neutral-200">Giao tiếp</span>
-                                        <div class="flex items-center gap-2 flex-1">
-                                            <div class="w-full bg-neutral-200 dark:bg-neutral-700 rounded-full h-1">
-                                                <div class="bg-neutral-700 dark:bg-white h-1 rounded-full"
-                                                    style="width: 98%"></div>
-                                            </div>
-                                            <span
-                                                class="font-medium text-sm text-neutral-700 dark:text-white">4.9</span>
-                                        </div>
-                                    </div>
-                                    <div class="flex justify-between items-center gap-4">
-                                        <span class="text-neutral-500 dark:text-neutral-200">Vị trí</span>
-                                        <div class="flex items-center gap-2 flex-1">
-                                            <div class="w-full bg-neutral-200 dark:bg-neutral-700 rounded-full h-1">
-                                                <div class="bg-neutral-700 dark:bg-white h-1 rounded-full"
-                                                    style="width: 98%"></div>
-                                            </div>
-                                            <span
-                                                class="font-medium text-sm text-neutral-700 dark:text-white">4.9</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <h2 class="text-xl font-bold text-neutral-700 dark:text-white mb-4">Vị trí chỗ ở</h2>
-                                <div id="map-image" class="w-full h-96 rounded-xl bg-cover bg-center bg-neutral-200">
-                                </div>
-                                <p class="mt-4 font-bold text-neutral-700 dark:text-white" id="map-location-text">Vị trí
-                                </p>
+                </div>
+            </div>
+    </div>
+    </div>
+    </header>
+    <main class="flex h-full grow flex-col pt-20">
+        <div class="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 py-8">
+            <div id="loading" class="text-center py-20 hidden">
+                <p>Đang tải thông tin...</p>
+            </div>
+            <div id="error-message" class="text-center py-20 hidden">
+                <h2 class="text-2xl font-bold text-red-600">Không tìm thấy chỗ ở</h2>
+                <p class="mt-4">Xin lỗi, chúng tôi không tìm thấy thông tin chỗ ở bạn yêu cầu.</p>
+                <a href="home.html" class="mt-6 inline-block px-6 py-3 bg-primary text-white rounded-lg font-bold">Quay
+                    lại trang
+                    chủ</a>
+            </div>
+
+            <div id="property-content" class="flex flex-col gap-6 hidden">
+                <div class="flex flex-col gap-2">
+                    <div class="flex flex-wrap gap-2">
+                        <a class="text-neutral-500 dark:text-neutral-200 text-sm font-medium leading-normal hover:text-primary"
+                            href="home.html">Trang chủ</a>
+                        <span class="text-neutral-500 dark:text-neutral-200 text-sm font-medium leading-normal">/</span>
+                        <a class="text-neutral-500 dark:text-neutral-200 text-sm font-medium leading-normal hover:text-primary"
+                            href="#" id="breadcrumb-location">Địa điểm</a>
+                        <span class="text-neutral-500 dark:text-neutral-200 text-sm font-medium leading-normal">/</span>
+                        <span class="text-neutral-700 dark:text-white text-sm font-medium leading-normal"
+                            id="breadcrumb-name">Tên chỗ ở</span>
+                    </div>
+                    <div class="flex flex-wrap justify-between items-start gap-4">
+                        <div class="flex flex-col gap-1">
+                            <h1 id="property-name"
+                                class="text-neutral-700 dark:text-white text-3xl font-bold leading-tight tracking-tight">
+                                Tên chỗ ở</h1>
+                            <div class="flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-200">
+                                <span class="material-symbols-outlined text-accent-gold !text-lg"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="font-bold text-neutral-700 dark:text-white" id="property-rating">0.0</span>
+                                <span id="property-reviews">(0 đánh giá)</span>
+                                <span class="font-bold">·</span>
+                                <a class="font-bold underline text-neutral-700 dark:text-white hover:text-primary"
+                                    href="#" id="property-location-link">Vị trí</a>
                             </div>
                         </div>
-                        <div class="lg:col-span-1">
-                            <div class="sticky top-24">
+                        <div class="flex gap-2">
+                            <button
+                                class="flex items-center gap-2 px-3 py-2 text-neutral-700 dark:text-white rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-700">
+                                <span class="material-symbols-outlined !text-xl">ios_share</span>
+                                <span class="text-sm font-medium">Chia sẻ</span>
+                            </button>
+                            <button
+                                class="flex items-center gap-2 px-3 py-2 text-neutral-700 dark:text-white rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-700">
+                                <span class="material-symbols-outlined !text-xl">favorite</span>
+                                <span class="text-sm font-medium">Lưu</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="grid grid-cols-4 grid-rows-2 gap-2 h-[550px]">
+                        <div class="col-span-4 sm:col-span-2 row-span-2 rounded-xl overflow-hidden">
+                            <div id="img-main" class="w-full h-full bg-center bg-no-repeat bg-cover bg-neutral-200">
+                            </div>
+                        </div>
+                        <div class="col-span-2 sm:col-span-1 row-span-1 rounded-xl overflow-hidden hidden sm:block">
+                            <div id="img-gallery-0"
+                                class="w-full h-full bg-center bg-no-repeat bg-cover bg-neutral-200">
+                            </div>
+                        </div>
+                        <div class="col-span-2 sm:col-span-1 row-span-1 rounded-xl overflow-hidden hidden sm:block">
+                            <div id="img-gallery-1"
+                                class="w-full h-full bg-center bg-no-repeat bg-cover bg-neutral-200">
+                            </div>
+                        </div>
+                        <div class="col-span-2 sm:col-span-1 row-span-1 rounded-xl overflow-hidden hidden sm:block">
+                            <div id="img-gallery-2"
+                                class="w-full h-full bg-center bg-no-repeat bg-cover bg-neutral-200">
+                            </div>
+                        </div>
+                        <div class="col-span-2 sm:col-span-1 row-span-1 rounded-xl overflow-hidden hidden sm:block">
+                            <div id="img-gallery-3"
+                                class="w-full h-full bg-center bg-no-repeat bg-cover bg-neutral-200">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-4 right-4">
+                        <button id="view-all-photos-btn"
+                            class="flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-background-light dark:bg-background-dark text-neutral-700 dark:text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] border border-neutral-200 dark:border-neutral-700 shadow-sm hover:shadow-md">
+                            <span class="material-symbols-outlined !text-xl">collections</span>
+                            <span>Xem tất cả ảnh</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-24 mt-6">
+                    <div class="lg:col-span-2 flex flex-col gap-8">
+                        <div class="flex flex-col gap-4 pb-8 border-b border-neutral-200 dark:border-neutral-700">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <h2 class="text-xl font-bold text-neutral-700 dark:text-white" id="host-info">
+                                        Toàn bộ biệt thự.
+                                        Chủ nhà...</h2>
+                                    <p class="text-neutral-500 dark:text-neutral-200">10 khách · 5 phòng ngủ · 6
+                                        giường · 5 phòng tắm</p>
+                                </div>
+                                <img id="host-avatar" class="w-14 h-14 rounded-full object-cover" src="" />
+                            </div>
+                            <div class="flex items-center gap-2 mt-2" id="superhost-badge">
+                                <span
+                                    class="inline-flex items-center justify-center rounded-full bg-accent-gold/10 px-3 py-1 text-xs font-bold text-accent-gold">
+                                    Chủ nhà siêu cấp
+                                </span>
+                                <div class="flex items-center gap-1 text-neutral-500 dark:text-neutral-200 text-sm">
+                                    <span class="material-symbols-outlined text-accent-gold !text-base"
+                                        style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+                                    <span>Đánh giá xuất sắc</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pb-8 border-b border-neutral-200 dark:border-neutral-700">
+                            <p class="text-neutral-500 dark:text-neutral-200 leading-relaxed" id="property-description">
+                                Mô tả...
+                            </p>
+                            <a id="description-toggle-btn"
+                                class="mt-4 inline-flex items-center gap-1 font-bold text-neutral-700 dark:text-white hover:text-primary hidden cursor-pointer">
+                                <span>Hiển thị thêm</span>
+                                <span class="material-symbols-outlined !text-xl">chevron_right</span>
+                            </a>
+                        </div>
+                        <div class="pb-8 border-b border-neutral-200 dark:border-neutral-700">
+                            <h2 class="text-xl font-bold text-neutral-700 dark:text-white mb-4">Tiện ích chính</h2>
+                            <div class="grid grid-cols-2 gap-4" id="amenities-list">
+                            </div>
+                            <button id="show-amenities-btn"
+                                class="mt-6 flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-transparent text-neutral-700 dark:text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] border border-neutral-700 dark:border-white hover:bg-neutral-100 dark:hover:bg-neutral-700">
+                                <span>Hiển thị tất cả tiện nghi</span>
+                            </button>
+                        </div>
+                        <div class="pb-8 border-b border-neutral-200 dark:border-neutral-700">
+                            <div class="flex items-center gap-2 mb-6">
+                                <span class="material-symbols-outlined text-accent-gold !text-2xl"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <h2 class="text-xl font-bold text-neutral-700 dark:text-white" id="reviews-summary">
+                                    4.98 (250 đánh giá)
+                                </h2>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
+                                <div class="flex justify-between items-center gap-4">
+                                    <span class="text-neutral-500 dark:text-neutral-200">Sạch sẽ</span>
+                                    <div class="flex items-center gap-2 flex-1">
+                                        <div class="w-full bg-neutral-200 dark:bg-neutral-700 rounded-full h-1">
+                                            <div class="bg-neutral-700 dark:bg-white h-1 rounded-full"
+                                                style="width: 100%"></div>
+                                        </div>
+                                        <span class="font-medium text-sm text-neutral-700 dark:text-white">5.0</span>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center gap-4">
+                                    <span class="text-neutral-500 dark:text-neutral-200">Độ chính xác</span>
+                                    <div class="flex items-center gap-2 flex-1">
+                                        <div class="w-full bg-neutral-200 dark:bg-neutral-700 rounded-full h-1">
+                                            <div class="bg-neutral-700 dark:bg-white h-1 rounded-full"
+                                                style="width: 100%"></div>
+                                        </div>
+                                        <span class="font-medium text-sm text-neutral-700 dark:text-white">5.0</span>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center gap-4">
+                                    <span class="text-neutral-500 dark:text-neutral-200">Giao tiếp</span>
+                                    <div class="flex items-center gap-2 flex-1">
+                                        <div class="w-full bg-neutral-200 dark:bg-neutral-700 rounded-full h-1">
+                                            <div class="bg-neutral-700 dark:bg-white h-1 rounded-full"
+                                                style="width: 98%"></div>
+                                        </div>
+                                        <span class="font-medium text-sm text-neutral-700 dark:text-white">4.9</span>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center gap-4">
+                                    <span class="text-neutral-500 dark:text-neutral-200">Vị trí</span>
+                                    <div class="flex items-center gap-2 flex-1">
+                                        <div class="w-full bg-neutral-200 dark:bg-neutral-700 rounded-full h-1">
+                                            <div class="bg-neutral-700 dark:bg-white h-1 rounded-full"
+                                                style="width: 98%"></div>
+                                        </div>
+                                        <span class="font-medium text-sm text-neutral-700 dark:text-white">4.9</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-bold text-neutral-700 dark:text-white mb-4">Vị trí chỗ ở</h2>
+                            <div id="map-image" class="w-full h-96 rounded-xl bg-cover bg-center bg-neutral-200">
+                            </div>
+                            <p class="mt-4 font-bold text-neutral-700 dark:text-white" id="map-location-text">Vị trí
+                            </p>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-1">
+                        <div class="sticky top-24">
+                            <div
+                                class="rounded-xl border border-neutral-200 dark:border-neutral-700 shadow-lg p-6 flex flex-col gap-5">
+                                <div class="flex items-baseline gap-1">
+                                    <span id="price-display"
+                                        class="text-2xl font-bold text-neutral-700 dark:text-white">0₫</span>
+                                    <span class="text-neutral-500 dark:text-neutral-200">/
+                                        đêm</span>
+                                </div>
                                 <div
-                                    class="rounded-xl border border-neutral-200 dark:border-neutral-700 shadow-lg p-6 flex flex-col gap-5">
-                                    <div class="flex items-baseline gap-1">
-                                        <span id="price-display"
-                                            class="text-2xl font-bold text-neutral-700 dark:text-white">0₫</span>
-                                        <span class="text-neutral-500 dark:text-neutral-200">/
-                                            đêm</span>
-                                    </div>
-                                    <div
-                                        class="grid grid-cols-2 gap-px border border-neutral-500 dark:border-neutral-200 rounded-lg overflow-hidden">
-                                        <div class="p-3 bg-background-light dark:bg-background-dark">
-                                            <label
-                                                class="block text-xs font-bold uppercase text-neutral-700 dark:text-white"
-                                                for="check-in">Nhận phòng</label>
-                                            <input
-                                                class="w-full border-0 p-0 text-sm bg-transparent focus:ring-0 text-neutral-500 dark:text-neutral-200"
-                                                id="check-in" type="date" />
-                                        </div>
-                                        <div class="p-3 bg-background-light dark:bg-background-dark">
-                                            <label
-                                                class="block text-xs font-bold uppercase text-neutral-700 dark:text-white"
-                                                for="check-out">Trả phòng</label>
-                                            <input
-                                                class="w-full border-0 p-0 text-sm bg-transparent focus:ring-0 text-neutral-500 dark:text-neutral-200"
-                                                id="check-out" type="date" />
-                                        </div>
-                                    </div>
-                                    <div class="p-3 border border-neutral-500 dark:border-neutral-200 rounded-lg">
+                                    class="grid grid-cols-2 gap-px border border-neutral-500 dark:border-neutral-200 rounded-lg overflow-hidden">
+                                    <div class="p-3 bg-background-light dark:bg-background-dark">
                                         <label
                                             class="block text-xs font-bold uppercase text-neutral-700 dark:text-white"
-                                            for="room-type">Loại phòng</label>
-                                        <select
+                                            for="check-in">Nhận phòng</label>
+                                        <input
                                             class="w-full border-0 p-0 text-sm bg-transparent focus:ring-0 text-neutral-500 dark:text-neutral-200"
-                                            id="room-type">
-                                            <option value="single">Phòng đơn</option>
-                                            <option value="double">Phòng đôi</option>
-                                            <option value="quad">Phòng 4 người</option>
-                                        </select>
+                                            id="check-in" type="date" />
                                     </div>
-                                    <a href="#" id="book-now-link" class="w-full">
-                                        <button
-                                            class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-primary/90">
-                                            <span>Đặt ngay</span>
-                                        </button>
-                                    </a>
-                                    <p class="text-center text-sm text-neutral-500 dark:text-neutral-200">
-                                        Bạn chưa bị
-                                        trừ tiền</p>
-                                    <div
-                                        class="flex flex-col gap-3 pt-4 border-t border-neutral-200 dark:border-neutral-700">
-                                        <div class="flex justify-between text-neutral-500 dark:text-neutral-200">
-                                            <span id="price-calculation">0₫ x 0 đêm</span>
-                                            <span id="price-total-base">0₫</span>
-                                        </div>
-                                        <div class="flex justify-between text-neutral-500 dark:text-neutral-200">
-                                            <span>Phí dịch vụ (10%)</span>
-                                            <span id="service-fee">0₫</span>
-                                        </div>
+                                    <div class="p-3 bg-background-light dark:bg-background-dark">
+                                        <label
+                                            class="block text-xs font-bold uppercase text-neutral-700 dark:text-white"
+                                            for="check-out">Trả phòng</label>
+                                        <input
+                                            class="w-full border-0 p-0 text-sm bg-transparent focus:ring-0 text-neutral-500 dark:text-neutral-200"
+                                            id="check-out" type="date" />
                                     </div>
-                                    <div
-                                        class="flex justify-between font-bold text-neutral-700 dark:text-white pt-4 border-t border-neutral-200 dark:border-neutral-700">
-                                        <span>Tổng cộng</span>
-                                        <span id="total-price">0₫</span>
+                                </div>
+                                <div class="p-3 border border-neutral-500 dark:border-neutral-200 rounded-lg">
+                                    <label class="block text-xs font-bold uppercase text-neutral-700 dark:text-white"
+                                        for="room-type">Loại phòng</label>
+                                    <select
+                                        class="w-full border-0 p-0 text-sm bg-transparent focus:ring-0 text-neutral-500 dark:text-neutral-200"
+                                        id="room-type">
+                                        <option value="single">Phòng đơn</option>
+                                        <option value="double">Phòng đôi</option>
+                                        <option value="quad">Phòng 4 người</option>
+                                    </select>
+                                </div>
+                                <a href="#" id="book-now-link" class="w-full">
+                                    <button
+                                        class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-primary/90">
+                                        <span>Đặt ngay</span>
+                                    </button>
+                                </a>
+                                <p class="text-center text-sm text-neutral-500 dark:text-neutral-200">
+                                    Bạn chưa bị
+                                    trừ tiền</p>
+                                <div
+                                    class="flex flex-col gap-3 pt-4 border-t border-neutral-200 dark:border-neutral-700">
+                                    <div class="flex justify-between text-neutral-500 dark:text-neutral-200">
+                                        <span id="price-calculation">0₫ x 0 đêm</span>
+                                        <span id="price-total-base">0₫</span>
                                     </div>
+                                    <div class="flex justify-between text-neutral-500 dark:text-neutral-200">
+                                        <span>Phí dịch vụ (10%)</span>
+                                        <span id="service-fee">0₫</span>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex justify-between font-bold text-neutral-700 dark:text-white pt-4 border-t border-neutral-200 dark:border-neutral-700">
+                                    <span>Tổng cộng</span>
+                                    <span id="total-price">0₫</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </main>
+        </div>
+    </main>
     </div>
 
     <div id="gallery-modal" class="fixed inset-0 z-50 hidden bg-black/90 overflow-y-auto">
@@ -947,6 +987,41 @@
         const closeRegisterBtn = document.getElementById('close-register');
         const switchToRegisterBtn = document.getElementById('switch-to-register');
         const switchToLoginBtn = document.getElementById('switch-to-login');
+
+        // Mobile Menu Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMobileMenuBtn = document.getElementById('close-mobile-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLoginBtn = document.getElementById('mobile-login-btn');
+        const mobileRegisterBtn = document.getElementById('mobile-register-btn');
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('translate-x-full');
+                document.body.style.overflow = 'hidden';
+            });
+        }
+
+        if (closeMobileMenuBtn) {
+            closeMobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+                document.body.style.overflow = '';
+            });
+        }
+
+        if (mobileLoginBtn) {
+            mobileLoginBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+                openModal(loginModal);
+            });
+        }
+
+        if (mobileRegisterBtn) {
+            mobileRegisterBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+                openModal(registerModal);
+            });
+        }
 
         // Helper to open modal with animation
         const openModal = (modal) => {

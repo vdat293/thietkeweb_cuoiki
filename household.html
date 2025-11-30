@@ -123,9 +123,9 @@
                     </nav>
 
                     <!-- Action Buttons -->
-                    <div class="flex items-center gap-3">
+                    <div class="hidden lg:flex items-center gap-3">
                         <button id="header-host-btn"
-                            class="hidden sm:flex items-center gap-2 px-5 py-2.5 text-sm font-medium text-charcoal hover:text-primary transition-all duration-300">
+                            class="flex items-center gap-2 px-5 py-2.5 text-sm font-medium text-charcoal hover:text-primary transition-all duration-300">
                             <span class="material-symbols-outlined text-lg">home_work</span>
                             <span>Đăng cho thuê</span>
                         </button>
@@ -138,299 +138,348 @@
                             Đăng ký
                         </button>
                     </div>
-                </div>
-            </div>
-        </header>
 
-        <main class="flex-grow pt-20">
-            <section class="relative bg-cream py-16 md:py-24">
-                <div class="max-w-7xl mx-auto px-6 lg:px-8">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-                        <div class="text-center md:text-left">
-                            <h1 class="font-display text-4xl md:text-5xl font-semibold leading-tight text-charcoal">
-                                Trở thành Chủ nhà trên <span class="text-primary">Aoklevart</span>
-                            </h1>
-                            <p class="mt-6 text-lg md:text-xl text-warm-gray font-light leading-relaxed">
-                                Chia sẻ không gian của bạn, kết nối với du khách từ khắp nơi và bắt đầu kiếm thêm thu
-                                nhập một cách linh
-                                hoạt.
-                            </p>
-                            <button id="become-host-btn-hero"
-                                class="mt-8 px-8 py-4 bg-accent text-white text-base font-medium rounded-lg hover:bg-accent-light transition-all shadow-elegant hover:shadow-elegant-lg">
-                                Bắt đầu ngay hôm nay
-                            </button>
-                        </div>
-                        <div class="relative h-96 md:h-[500px] rounded-2xl overflow-hidden shadow-elegant-xl">
-                            <img alt="A beautiful and welcoming living room in a rental property"
-                                class="w-full h-full object-cover"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCa5Itjlhdexv-gjI7t9awdqMVdkr92EhDBWgF0cFIuX7VpJWRHKS2w5eDWaZsLYBB_NOQaF7dYeaLarzD-KlsHMdpLfKWbXiy3C5JNmBAe0I_b6lv5PhAIYm-r7yYoDv7wOIacS-aZERj2OMWJGcxBNsqO8P40pANFRouULOD0nRIFpk6HDlq9IIjHEZ5UfKmppSwfn9wEbdwdFCbibWvzTA24bk799VNwKvjiaxbIj00NiMO_UtO_T-APZL1pNUI_IfCxIODK1Y4" />
-                            <div class="absolute inset-0 bg-gradient-to-t from-charcoal/30 to-transparent"></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="py-16 md:py-24 bg-white">
-                <div class="max-w-7xl mx-auto px-6 lg:px-8">
-                    <div class="text-center max-w-3xl mx-auto">
-                        <h2 class="font-display text-3xl md:text-4xl font-semibold text-charcoal">Tại sao nên cho thuê
-                            trên
-                            Aoklevart?</h2>
-                        <p class="mt-4 text-lg text-warm-gray font-light">Chúng tôi mang đến cho bạn những công cụ, sự
-                            hỗ trợ và bảo
-                            vệ cần thiết để bạn tự tin chia sẻ không gian của mình.</p>
-                    </div>
-                    <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-12">
-                        <div class="flex flex-col items-center text-center">
-                            <div
-                                class="flex items-center justify-center h-20 w-20 rounded-full bg-primary/5 text-primary mb-6">
-                                <span class="material-symbols-outlined text-4xl">payments</span>
-                            </div>
-                            <h3 class="font-display text-xl font-semibold text-charcoal">Thu nhập linh hoạt</h3>
-                            <p class="mt-3 text-warm-gray">Bạn quyết định giá, lịch trống và các quy tắc cho không gian
-                                của mình. Kiếm
-                                tiền theo cách của bạn.</p>
-                        </div>
-                        <div class="flex flex-col items-center text-center">
-                            <div
-                                class="flex items-center justify-center h-20 w-20 rounded-full bg-primary/5 text-primary mb-6">
-                                <span class="material-symbols-outlined text-4xl">verified_user</span>
-                            </div>
-                            <h3 class="font-display text-xl font-semibold text-charcoal">An toàn và bảo vệ</h3>
-                            <p class="mt-3 text-warm-gray">Chúng tôi bảo vệ bạn và chỗ ở của bạn với các chương trình
-                                bảo hiểm và xác
-                                minh danh tính khách.</p>
-                        </div>
-                        <div class="flex flex-col items-center text-center">
-                            <div
-                                class="flex items-center justify-center h-20 w-20 rounded-full bg-primary/5 text-primary mb-6">
-                                <span class="material-symbols-outlined text-4xl">support_agent</span>
-                            </div>
-                            <h3 class="font-display text-xl font-semibold text-charcoal">Hỗ trợ 24/7</h3>
-                            <p class="mt-3 text-warm-gray">Đội ngũ hỗ trợ toàn cầu của chúng tôi luôn sẵn sàng giúp đỡ
-                                bạn qua điện
-                                thoại, email và trò chuyện trực tiếp.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="py-16 md:py-24 bg-cream">
-                <div class="max-w-7xl mx-auto px-6 lg:px-8">
-                    <div class="text-center max-w-3xl mx-auto mb-16">
-                        <h2 class="font-display text-3xl md:text-4xl font-semibold text-charcoal">Bắt đầu chỉ với 3 bước
-                            đơn giản
-                        </h2>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                        <div
-                            class="p-8 bg-white rounded-2xl shadow-elegant hover:shadow-elegant-lg transition-all duration-300">
-                            <div
-                                class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent text-white text-2xl font-bold mb-6">
-                                1
-                            </div>
-                            <h3 class="font-display text-xl font-semibold text-charcoal">Tạo mục cho thuê</h3>
-                            <p class="mt-3 text-warm-gray">Cung cấp thông tin chi tiết và hình ảnh về không gian của
-                                bạn. Chúng tôi sẽ
-                                giúp bạn làm cho nó nổi bật.</p>
-                        </div>
-                        <div
-                            class="p-8 bg-white rounded-2xl shadow-elegant hover:shadow-elegant-lg transition-all duration-300">
-                            <div
-                                class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent text-white text-2xl font-bold mb-6">
-                                2
-                            </div>
-                            <h3 class="font-display text-xl font-semibold text-charcoal">Thiết lập & quản lý</h3>
-                            <p class="mt-3 text-warm-gray">Đặt giá, lịch trống và các quy tắc riêng. Công cụ của chúng
-                                tôi giúp bạn
-                                quản lý mọi thứ dễ dàng.</p>
-                        </div>
-                        <div
-                            class="p-8 bg-white rounded-2xl shadow-elegant hover:shadow-elegant-lg transition-all duration-300">
-                            <div
-                                class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent text-white text-2xl font-bold mb-6">
-                                3
-                            </div>
-                            <h3 class="font-display text-xl font-semibold text-charcoal">Chào đón khách</h3>
-                            <p class="mt-3 text-warm-gray">Nhận đặt phòng và bắt đầu chào đón những vị khách tuyệt vời
-                                từ khắp nơi
-                                trên thế giới.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="py-16 md:py-24 bg-white">
-                <div class="max-w-4xl mx-auto px-6 lg:px-8">
-                    <h2 class="font-display text-3xl md:text-4xl font-semibold text-center text-charcoal mb-12">Câu hỏi
-                        thường gặp
-                    </h2>
-                    <div class="space-y-4">
-                        <div class="border border-neutral-200 rounded-xl overflow-hidden">
-                            <details class="group bg-white">
-                                <summary
-                                    class="flex items-center justify-between p-6 cursor-pointer font-medium text-charcoal list-none hover:bg-neutral-50 transition-colors">
-                                    Tôi có thể kiếm được bao nhiêu tiền?
-                                    <span
-                                        class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span>
-                                </summary>
-                                <div class="px-6 pb-6 text-warm-gray">
-                                    Thu nhập của bạn phụ thuộc vào vị trí, loại hình chỗ ở, và tần suất cho thuê. Công
-                                    cụ ước tính thu nhập
-                                    của chúng tôi có thể giúp bạn có một con số tham khảo.
-                                </div>
-                            </details>
-                        </div>
-                        <div class="border border-neutral-200 rounded-xl overflow-hidden">
-                            <details class="group bg-white">
-                                <summary
-                                    class="flex items-center justify-between p-6 cursor-pointer font-medium text-charcoal list-none hover:bg-neutral-50 transition-colors">
-                                    Chi phí để đăng tin là bao nhiêu?
-                                    <span
-                                        class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span>
-                                </summary>
-                                <div class="px-6 pb-6 text-warm-gray">
-                                    Đăng ký và tạo mục cho thuê trên Aoklevart là hoàn toàn miễn phí. Chúng tôi chỉ tính
-                                    một khoản phí dịch
-                                    vụ nhỏ trên mỗi lượt đặt phòng thành công.
-                                </div>
-                            </details>
-                        </div>
-                        <div class="border border-neutral-200 rounded-xl overflow-hidden">
-                            <details class="group bg-white">
-                                <summary
-                                    class="flex items-center justify-between p-6 cursor-pointer font-medium text-charcoal list-none hover:bg-neutral-50 transition-colors">
-                                    Aoklevart bảo vệ Chủ nhà như thế nào?
-                                    <span
-                                        class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span>
-                                </summary>
-                                <div class="px-6 pb-6 text-warm-gray">
-                                    Chúng tôi cung cấp chương trình Bảo hiểm cho Chủ nhà và chương trình Đảm bảo cho Chủ
-                                    nhà để bảo vệ bạn
-                                    khỏi các thiệt hại tài sản và các vấn đề về trách nhiệm pháp lý.
-                                </div>
-                            </details>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="py-20 md:py-28 bg-primary text-white">
-                <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-                    <h2 class="font-display text-3xl md:text-4xl font-semibold mb-6">Sẵn sàng chia sẻ không gian của
-                        bạn?</h2>
-                    <p class="max-w-2xl mx-auto text-lg text-white/80 mb-10">
-                        Tham gia cộng đồng chủ nhà toàn cầu của chúng tôi và mở ra những cơ hội mới.
-                    </p>
-                    <button id="become-host-btn-footer"
-                        class="px-8 py-4 bg-accent text-white text-base font-medium rounded-lg hover:bg-accent-light transition-all shadow-elegant hover:shadow-elegant-lg">
-                        Trở thành chủ nhà ngay
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn"
+                        class="lg:hidden p-2 text-charcoal hover:bg-neutral-100 rounded-lg transition-colors">
+                        <span class="material-symbols-outlined text-2xl">menu</span>
                     </button>
                 </div>
-            </section>
-        </main>
+            </div>
 
-        <!-- Premium Footer -->
-        <footer class="bg-charcoal text-white">
-            <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-20">
-                <div class="grid grid-cols-2 md:grid-cols-5 gap-8 lg:gap-12">
-                    <!-- Brand Column -->
-                    <div class="col-span-2">
-                        <div class="flex items-center gap-3 mb-6">
-                            <div class="relative w-10 h-10 flex items-center justify-center">
-                                <div class="absolute inset-0 bg-accent rounded-lg transform rotate-45"></div>
-                                <span class="relative text-charcoal font-display font-bold text-lg">A</span>
-                            </div>
-                            <span class="font-display text-xl font-semibold">Aoklevart</span>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu"
+                class="fixed inset-0 z-50 bg-white transform translate-x-full transition-transform duration-300 lg:hidden">
+                <div class="flex flex-col h-full">
+                    <div class="flex items-center justify-between p-6 border-b border-neutral-100">
+                        <span class="font-display text-xl font-bold text-primary">Menu</span>
+                        <button id="close-mobile-menu"
+                            class="p-2 text-charcoal hover:bg-neutral-100 rounded-full transition-colors">
+                            <span class="material-symbols-outlined">close</span>
+                        </button>
+                    </div>
+                    <div class="flex-1 overflow-y-auto p-6 space-y-6">
+                        <nav class="flex flex-col gap-4">
+                            <a href="home.html#featured-properties-section"
+                                class="text-lg font-medium text-charcoal hover:text-primary">Chỗ ở</a>
+                            <a href="home.html#destinations-section"
+                                class="text-lg font-medium text-charcoal hover:text-primary">Điểm đến</a>
+                            <a href="#" class="text-lg font-medium text-charcoal hover:text-primary">Trải nghiệm</a>
+                            <a href="home.html#about-section"
+                                class="text-lg font-medium text-charcoal hover:text-primary">Về chúng tôi</a>
+                        </nav>
+                        <hr class="border-neutral-100">
+                        <div class="flex flex-col gap-4">
+                            <button id="mobile-host-btn"
+                                class="flex items-center gap-3 text-lg font-medium text-charcoal hover:text-primary w-full text-left">
+                                <span class="material-symbols-outlined">home_work</span>
+                                Đăng cho thuê
+                            </button>
+                            <button id="mobile-login-btn"
+                                class="w-full py-3 text-center border border-neutral-200 rounded-xl font-medium text-charcoal hover:bg-neutral-50">
+                                Đăng nhập
+                            </button>
+                            <button id="mobile-register-btn"
+                                class="w-full py-3 text-center bg-primary text-white rounded-xl font-medium hover:bg-primary-light shadow-lg shadow-primary/20">
+                                Đăng ký
+                            </button>
                         </div>
-                        <p class="text-white/60 text-sm leading-relaxed mb-6 max-w-xs">
-                            Nền tảng đặt phòng nghỉ dưỡng hàng đầu Việt Nam, kết nối bạn với những trải nghiệm lưu trú
-                            độc đáo và đáng
-                            nhớ.
-                        </p>
-                        <div class="flex gap-4">
-                            <a href="#"
-                                class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors duration-300">
-                                <i class="fa-brands fa-facebook-f text-white/80"></i>
-                            </a>
-                            <a href="#"
-                                class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors duration-300">
-                                <i class="fa-brands fa-instagram text-white/80"></i>
-                            </a>
-                            <a href="#"
-                                class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors duration-300">
-                                <i class="fa-brands fa-twitter text-white/80"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Links Columns -->
-                    <div>
-                        <h4 class="font-semibold text-white mb-5">Về Aoklevart</h4>
-                        <ul class="space-y-3">
-                            <li><a href="#"
-                                    class="text-white/60 text-sm hover:text-accent transition-colors duration-300">Giới
-                                    thiệu</a></li>
-                            <li><a href="#"
-                                    class="text-white/60 text-sm hover:text-accent transition-colors duration-300">Cơ
-                                    hội nghề nghiệp</a></li>
-                            <li><a href="#"
-                                    class="text-white/60 text-sm hover:text-accent transition-colors duration-300">Tin
-                                    tức</a></li>
-                            <li><a href="#"
-                                    class="text-white/60 text-sm hover:text-accent transition-colors duration-300">Chính
-                                    sách</a></li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h4 class="font-semibold text-white mb-5">Khám phá</h4>
-                        <ul class="space-y-3">
-                            <li><a href="#"
-                                    class="text-white/60 text-sm hover:text-accent transition-colors duration-300">Chỗ
-                                    ở nổi bật</a></li>
-                            <li><a href="#"
-                                    class="text-white/60 text-sm hover:text-accent transition-colors duration-300">Điểm
-                                    đến</a></li>
-                            <li><a href="#"
-                                    class="text-white/60 text-sm hover:text-accent transition-colors duration-300">Trải
-                                    nghiệm</a></li>
-                            <li><a href="#"
-                                    class="text-white/60 text-sm hover:text-accent transition-colors duration-300">Tạp
-                                    chí du lịch</a></li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h4 class="font-semibold text-white mb-5">Hỗ trợ</h4>
-                        <ul class="space-y-3">
-                            <li><a href="#"
-                                    class="text-white/60 text-sm hover:text-accent transition-colors duration-300">Trung
-                                    tâm trợ giúp</a></li>
-                            <li><a href="#"
-                                    class="text-white/60 text-sm hover:text-accent transition-colors duration-300">An
-                                    toàn & Bảo mật</a></li>
-                            <li><a href="#"
-                                    class="text-white/60 text-sm hover:text-accent transition-colors duration-300">Quy
-                                    chế hoạt động</a></li>
-                            <li><a href="#"
-                                    class="text-white/60 text-sm hover:text-accent transition-colors duration-300">Liên
-                                    hệ</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Bottom Bar -->
-                <div
-                    class="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
-                    <p class="text-white/40 text-sm">© 2024 Aoklevart. All rights reserved.</p>
-                    <div class="flex items-center gap-6">
-                        <span class="text-white/40 text-sm">Ngôn ngữ: Tiếng Việt</span>
-                        <span class="text-white/40 text-sm">VND (₫)</span>
                     </div>
                 </div>
             </div>
-        </footer>
+    </div>
+    </div>
+    </header>
+
+    <main class="flex-grow pt-20">
+        <section class="relative bg-cream py-16 md:py-24">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+                    <div class="text-center md:text-left">
+                        <h1 class="font-display text-4xl md:text-5xl font-semibold leading-tight text-charcoal">
+                            Trở thành Chủ nhà trên <span class="text-primary">Aoklevart</span>
+                        </h1>
+                        <p class="mt-6 text-lg md:text-xl text-warm-gray font-light leading-relaxed">
+                            Chia sẻ không gian của bạn, kết nối với du khách từ khắp nơi và bắt đầu kiếm thêm thu
+                            nhập một cách linh
+                            hoạt.
+                        </p>
+                        <button id="become-host-btn-hero"
+                            class="mt-8 px-8 py-4 bg-accent text-white text-base font-medium rounded-lg hover:bg-accent-light transition-all shadow-elegant hover:shadow-elegant-lg">
+                            Bắt đầu ngay hôm nay
+                        </button>
+                    </div>
+                    <div class="relative h-96 md:h-[500px] rounded-2xl overflow-hidden shadow-elegant-xl">
+                        <img alt="A beautiful and welcoming living room in a rental property"
+                            class="w-full h-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCa5Itjlhdexv-gjI7t9awdqMVdkr92EhDBWgF0cFIuX7VpJWRHKS2w5eDWaZsLYBB_NOQaF7dYeaLarzD-KlsHMdpLfKWbXiy3C5JNmBAe0I_b6lv5PhAIYm-r7yYoDv7wOIacS-aZERj2OMWJGcxBNsqO8P40pANFRouULOD0nRIFpk6HDlq9IIjHEZ5UfKmppSwfn9wEbdwdFCbibWvzTA24bk799VNwKvjiaxbIj00NiMO_UtO_T-APZL1pNUI_IfCxIODK1Y4" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/30 to-transparent"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 md:py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="font-display text-3xl md:text-4xl font-semibold text-charcoal">Tại sao nên cho thuê
+                        trên
+                        Aoklevart?</h2>
+                    <p class="mt-4 text-lg text-warm-gray font-light">Chúng tôi mang đến cho bạn những công cụ, sự
+                        hỗ trợ và bảo
+                        vệ cần thiết để bạn tự tin chia sẻ không gian của mình.</p>
+                </div>
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <div class="flex flex-col items-center text-center">
+                        <div
+                            class="flex items-center justify-center h-20 w-20 rounded-full bg-primary/5 text-primary mb-6">
+                            <span class="material-symbols-outlined text-4xl">payments</span>
+                        </div>
+                        <h3 class="font-display text-xl font-semibold text-charcoal">Thu nhập linh hoạt</h3>
+                        <p class="mt-3 text-warm-gray">Bạn quyết định giá, lịch trống và các quy tắc cho không gian
+                            của mình. Kiếm
+                            tiền theo cách của bạn.</p>
+                    </div>
+                    <div class="flex flex-col items-center text-center">
+                        <div
+                            class="flex items-center justify-center h-20 w-20 rounded-full bg-primary/5 text-primary mb-6">
+                            <span class="material-symbols-outlined text-4xl">verified_user</span>
+                        </div>
+                        <h3 class="font-display text-xl font-semibold text-charcoal">An toàn và bảo vệ</h3>
+                        <p class="mt-3 text-warm-gray">Chúng tôi bảo vệ bạn và chỗ ở của bạn với các chương trình
+                            bảo hiểm và xác
+                            minh danh tính khách.</p>
+                    </div>
+                    <div class="flex flex-col items-center text-center">
+                        <div
+                            class="flex items-center justify-center h-20 w-20 rounded-full bg-primary/5 text-primary mb-6">
+                            <span class="material-symbols-outlined text-4xl">support_agent</span>
+                        </div>
+                        <h3 class="font-display text-xl font-semibold text-charcoal">Hỗ trợ 24/7</h3>
+                        <p class="mt-3 text-warm-gray">Đội ngũ hỗ trợ toàn cầu của chúng tôi luôn sẵn sàng giúp đỡ
+                            bạn qua điện
+                            thoại, email và trò chuyện trực tiếp.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 md:py-24 bg-cream">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="font-display text-3xl md:text-4xl font-semibold text-charcoal">Bắt đầu chỉ với 3 bước
+                        đơn giản
+                    </h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div
+                        class="p-8 bg-white rounded-2xl shadow-elegant hover:shadow-elegant-lg transition-all duration-300">
+                        <div
+                            class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent text-white text-2xl font-bold mb-6">
+                            1
+                        </div>
+                        <h3 class="font-display text-xl font-semibold text-charcoal">Tạo mục cho thuê</h3>
+                        <p class="mt-3 text-warm-gray">Cung cấp thông tin chi tiết và hình ảnh về không gian của
+                            bạn. Chúng tôi sẽ
+                            giúp bạn làm cho nó nổi bật.</p>
+                    </div>
+                    <div
+                        class="p-8 bg-white rounded-2xl shadow-elegant hover:shadow-elegant-lg transition-all duration-300">
+                        <div
+                            class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent text-white text-2xl font-bold mb-6">
+                            2
+                        </div>
+                        <h3 class="font-display text-xl font-semibold text-charcoal">Thiết lập & quản lý</h3>
+                        <p class="mt-3 text-warm-gray">Đặt giá, lịch trống và các quy tắc riêng. Công cụ của chúng
+                            tôi giúp bạn
+                            quản lý mọi thứ dễ dàng.</p>
+                    </div>
+                    <div
+                        class="p-8 bg-white rounded-2xl shadow-elegant hover:shadow-elegant-lg transition-all duration-300">
+                        <div
+                            class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent text-white text-2xl font-bold mb-6">
+                            3
+                        </div>
+                        <h3 class="font-display text-xl font-semibold text-charcoal">Chào đón khách</h3>
+                        <p class="mt-3 text-warm-gray">Nhận đặt phòng và bắt đầu chào đón những vị khách tuyệt vời
+                            từ khắp nơi
+                            trên thế giới.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 md:py-24 bg-white">
+            <div class="max-w-4xl mx-auto px-6 lg:px-8">
+                <h2 class="font-display text-3xl md:text-4xl font-semibold text-center text-charcoal mb-12">Câu hỏi
+                    thường gặp
+                </h2>
+                <div class="space-y-4">
+                    <div class="border border-neutral-200 rounded-xl overflow-hidden">
+                        <details class="group bg-white">
+                            <summary
+                                class="flex items-center justify-between p-6 cursor-pointer font-medium text-charcoal list-none hover:bg-neutral-50 transition-colors">
+                                Tôi có thể kiếm được bao nhiêu tiền?
+                                <span
+                                    class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                            </summary>
+                            <div class="px-6 pb-6 text-warm-gray">
+                                Thu nhập của bạn phụ thuộc vào vị trí, loại hình chỗ ở, và tần suất cho thuê. Công
+                                cụ ước tính thu nhập
+                                của chúng tôi có thể giúp bạn có một con số tham khảo.
+                            </div>
+                        </details>
+                    </div>
+                    <div class="border border-neutral-200 rounded-xl overflow-hidden">
+                        <details class="group bg-white">
+                            <summary
+                                class="flex items-center justify-between p-6 cursor-pointer font-medium text-charcoal list-none hover:bg-neutral-50 transition-colors">
+                                Chi phí để đăng tin là bao nhiêu?
+                                <span
+                                    class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                            </summary>
+                            <div class="px-6 pb-6 text-warm-gray">
+                                Đăng ký và tạo mục cho thuê trên Aoklevart là hoàn toàn miễn phí. Chúng tôi chỉ tính
+                                một khoản phí dịch
+                                vụ nhỏ trên mỗi lượt đặt phòng thành công.
+                            </div>
+                        </details>
+                    </div>
+                    <div class="border border-neutral-200 rounded-xl overflow-hidden">
+                        <details class="group bg-white">
+                            <summary
+                                class="flex items-center justify-between p-6 cursor-pointer font-medium text-charcoal list-none hover:bg-neutral-50 transition-colors">
+                                Aoklevart bảo vệ Chủ nhà như thế nào?
+                                <span
+                                    class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                            </summary>
+                            <div class="px-6 pb-6 text-warm-gray">
+                                Chúng tôi cung cấp chương trình Bảo hiểm cho Chủ nhà và chương trình Đảm bảo cho Chủ
+                                nhà để bảo vệ bạn
+                                khỏi các thiệt hại tài sản và các vấn đề về trách nhiệm pháp lý.
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 md:py-28 bg-primary text-white">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+                <h2 class="font-display text-3xl md:text-4xl font-semibold mb-6">Sẵn sàng chia sẻ không gian của
+                    bạn?</h2>
+                <p class="max-w-2xl mx-auto text-lg text-white/80 mb-10">
+                    Tham gia cộng đồng chủ nhà toàn cầu của chúng tôi và mở ra những cơ hội mới.
+                </p>
+                <button id="become-host-btn-footer"
+                    class="px-8 py-4 bg-accent text-white text-base font-medium rounded-lg hover:bg-accent-light transition-all shadow-elegant hover:shadow-elegant-lg">
+                    Trở thành chủ nhà ngay
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Premium Footer -->
+    <footer class="bg-charcoal text-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-20">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8 lg:gap-12">
+                <!-- Brand Column -->
+                <div class="col-span-2">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="relative w-10 h-10 flex items-center justify-center">
+                            <div class="absolute inset-0 bg-accent rounded-lg transform rotate-45"></div>
+                            <span class="relative text-charcoal font-display font-bold text-lg">A</span>
+                        </div>
+                        <span class="font-display text-xl font-semibold">Aoklevart</span>
+                    </div>
+                    <p class="text-white/60 text-sm leading-relaxed mb-6 max-w-xs">
+                        Nền tảng đặt phòng nghỉ dưỡng hàng đầu Việt Nam, kết nối bạn với những trải nghiệm lưu trú
+                        độc đáo và đáng
+                        nhớ.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors duration-300">
+                            <i class="fa-brands fa-facebook-f text-white/80"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors duration-300">
+                            <i class="fa-brands fa-instagram text-white/80"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors duration-300">
+                            <i class="fa-brands fa-twitter text-white/80"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Links Columns -->
+                <div>
+                    <h4 class="font-semibold text-white mb-5">Về Aoklevart</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#"
+                                class="text-white/60 text-sm hover:text-accent transition-colors duration-300">Giới
+                                thiệu</a></li>
+                        <li><a href="#"
+                                class="text-white/60 text-sm hover:text-accent transition-colors duration-300">Cơ
+                                hội nghề nghiệp</a></li>
+                        <li><a href="#"
+                                class="text-white/60 text-sm hover:text-accent transition-colors duration-300">Tin
+                                tức</a></li>
+                        <li><a href="#"
+                                class="text-white/60 text-sm hover:text-accent transition-colors duration-300">Chính
+                                sách</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-white mb-5">Khám phá</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#"
+                                class="text-white/60 text-sm hover:text-accent transition-colors duration-300">Chỗ
+                                ở nổi bật</a></li>
+                        <li><a href="#"
+                                class="text-white/60 text-sm hover:text-accent transition-colors duration-300">Điểm
+                                đến</a></li>
+                        <li><a href="#"
+                                class="text-white/60 text-sm hover:text-accent transition-colors duration-300">Trải
+                                nghiệm</a></li>
+                        <li><a href="#"
+                                class="text-white/60 text-sm hover:text-accent transition-colors duration-300">Tạp
+                                chí du lịch</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-white mb-5">Hỗ trợ</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#"
+                                class="text-white/60 text-sm hover:text-accent transition-colors duration-300">Trung
+                                tâm trợ giúp</a></li>
+                        <li><a href="#"
+                                class="text-white/60 text-sm hover:text-accent transition-colors duration-300">An
+                                toàn & Bảo mật</a></li>
+                        <li><a href="#"
+                                class="text-white/60 text-sm hover:text-accent transition-colors duration-300">Quy
+                                chế hoạt động</a></li>
+                        <li><a href="#"
+                                class="text-white/60 text-sm hover:text-accent transition-colors duration-300">Liên
+                                hệ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div
+                class="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-white/40 text-sm">© 2024 Aoklevart. All rights reserved.</p>
+                <div class="flex items-center gap-6">
+                    <span class="text-white/40 text-sm">Ngôn ngữ: Tiếng Việt</span>
+                    <span class="text-white/40 text-sm">VND (₫)</span>
+                </div>
+            </div>
+        </div>
+    </footer>
     </div>
     <!-- Login Modal -->
     <div id="login-modal" class="fixed inset-0 z-[60] hidden">
@@ -692,6 +741,49 @@
             const closeRegisterBtn = document.getElementById('close-register');
             const switchToRegisterBtn = document.getElementById('switch-to-register');
             const switchToLoginBtn = document.getElementById('switch-to-login');
+
+            // Mobile Menu Logic
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const closeMobileMenuBtn = document.getElementById('close-mobile-menu');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLoginBtn = document.getElementById('mobile-login-btn');
+            const mobileRegisterBtn = document.getElementById('mobile-register-btn');
+            const mobileHostBtn = document.getElementById('mobile-host-btn');
+
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.remove('translate-x-full');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+
+            if (closeMobileMenuBtn) {
+                closeMobileMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.add('translate-x-full');
+                    document.body.style.overflow = '';
+                });
+            }
+
+            if (mobileLoginBtn) {
+                mobileLoginBtn.addEventListener('click', () => {
+                    mobileMenu.classList.add('translate-x-full');
+                    openModal(loginModal);
+                });
+            }
+
+            if (mobileRegisterBtn) {
+                mobileRegisterBtn.addEventListener('click', () => {
+                    mobileMenu.classList.add('translate-x-full');
+                    openModal(registerModal);
+                });
+            }
+
+            if (mobileHostBtn) {
+                mobileHostBtn.addEventListener('click', () => {
+                    mobileMenu.classList.add('translate-x-full');
+                    openModal(hostModal);
+                });
+            }
 
             // Helper to open modal with animation
             const openModal = (modal) => {
