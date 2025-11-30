@@ -2,6 +2,7 @@ window.properties = [
     {
         id: 1,
         name: "Khách sạn Sân bay Havana",
+        type: "hotel",
         location: "TP. Hồ Chí Minh, Việt Nam",
         price: "2.500.000₫",
         rating: 4.9,
@@ -92,6 +93,7 @@ window.properties = [
     {
         id: 31,
         name: "Khách sạn Muong Thanh Holiday Mui Ne",
+        type: "hotel",
         location: "Mũi Né, TP. Phan Thiết, Bình Thuận",
         price: "1.100.000₫",
         rating: 4.0,
@@ -158,6 +160,7 @@ window.properties = [
     {
         id: 32,
         name: "The Anam Mui Ne",
+        type: "hotel",
         location: "Phường Mũi Né, TP. Phan Thiết, Bình Thuận",
         price: "4.500.000₫",
         rating: 4.9,
@@ -254,6 +257,7 @@ window.properties = [
     {
         id: 33,
         name: "Amana Hotel Phan Thiet",
+        type: "hotel",
         location: "Phường Phú Thủy, TP. Phan Thiết, Bình Thuận",
         price: "650.000₫",
         rating: 4.9,
@@ -314,6 +318,7 @@ window.properties = [
     {
         id: 34,
         name: "Le' VIVA Resort Mui Ne",
+        type: "hotel",
         location: "TP. Phan Thiết, Bình Thuận",
         price: "1.150.000₫",
         rating: 4.6,
@@ -410,6 +415,7 @@ window.properties = [
     {
         id: 35,
         name: "Biệt thự MyGarden Phan Thiết Beachfront",
+        type: "villa",
         location: "Xã Tiến Thành, TP. Phan Thiết, Bình Thuận",
         price: "7.650.000₫",
         rating: 4.9,
@@ -484,6 +490,7 @@ window.properties = [
     {
         id: 41,
         name: "Ylang Garden Villa",
+        type: "villa",
         location: "TP. Hội An, Quảng Nam",
         price: "8.850.000₫",
         rating: 4.6,
@@ -558,6 +565,7 @@ window.properties = [
     {
         id: 42,
         name: "Hotel Royal Hoi An - Gallery",
+        type: "hotel",
         location: "TP. Hội An, Quảng Nam",
         price: "2.000.000₫",
         rating: 4.7,
@@ -660,6 +668,7 @@ window.properties = [
     {
         id: 43,
         name: "Reu Boutique Hotel",
+        type: "hotel",
         location: "TP. Hội An, Quảng Nam",
         price: "1.500.000₫",
         rating: 4.8,
