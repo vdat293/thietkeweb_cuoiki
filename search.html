@@ -246,6 +246,22 @@
                             <a href="home.html#about-section"
                                 class="text-lg font-medium text-charcoal hover:text-primary">Về chúng tôi</a>
                         </nav>
+                        <hr class="border-neutral-100">
+                        <div class="flex flex-col gap-4">
+                            <a href="household.html"
+                                class="flex items-center gap-3 text-lg font-medium text-charcoal hover:text-primary">
+                                <span class="material-symbols-outlined">home_work</span>
+                                Đăng cho thuê
+                            </a>
+                            <button id="mobile-login-btn"
+                                class="w-full py-3 text-center border border-neutral-200 rounded-xl font-medium text-charcoal hover:bg-neutral-50">
+                                Đăng nhập
+                            </button>
+                            <button id="mobile-register-btn"
+                                class="w-full py-3 text-center bg-primary text-white rounded-xl font-medium hover:bg-primary-light shadow-lg shadow-primary/20">
+                                Đăng ký
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -433,30 +449,267 @@
         <!-- Footer -->
         <!-- Footer Removed -->
 
+        <!-- Login Modal -->
+        <div id="login-modal" class="fixed inset-0 z-[60] hidden">
+            <!-- Backdrop -->
+            <div class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity opacity-0" id="login-backdrop">
+            </div>
+
+            <!-- Modal Content -->
+            <div class="relative min-h-screen flex items-center justify-center p-4">
+                <div class="relative w-full max-w-md bg-white rounded-2xl shadow-2xl transform scale-95 opacity-0 transition-all duration-300"
+                    id="login-content">
+                    <!-- Close Button -->
+                    <button id="close-login"
+                        class="absolute top-4 right-4 p-2 rounded-full hover:bg-neutral-100 transition-colors">
+                        <span class="material-symbols-outlined text-neutral-500">close</span>
+                    </button>
+
+                    <div class="p-8">
+                        <div class="text-center mb-8">
+                            <h2 class="font-display text-2xl font-bold text-charcoal mb-2">Chào mừng trở lại</h2>
+                            <p class="text-warm-gray text-sm">Đăng nhập để tiếp tục trải nghiệm</p>
+                        </div>
+
+                        <form class="space-y-4" onsubmit="event.preventDefault();">
+                            <div>
+                                <label class="block text-sm font-medium text-charcoal mb-1.5">Email</label>
+                                <input type="email" placeholder="name@example.com"
+                                    class="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:border-primary focus:ring-primary transition-colors bg-neutral-50">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-charcoal mb-1.5">Mật khẩu</label>
+                                <input type="password" placeholder="••••••••"
+                                    class="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:border-primary focus:ring-primary transition-colors bg-neutral-50">
+                            </div>
+
+                            <div class="flex items-center justify-between text-sm">
+                                <label class="flex items-center gap-2 cursor-pointer">
+                                    <input type="checkbox"
+                                        class="rounded border-neutral-300 text-primary focus:ring-primary">
+                                    <span class="text-warm-gray">Ghi nhớ đăng nhập</span>
+                                </label>
+                                <a href="#" class="text-primary font-medium hover:underline">Quên mật khẩu?</a>
+                            </div>
+
+                            <button
+                                class="w-full py-3.5 bg-primary text-white font-bold rounded-xl hover:bg-primary-light transition-all shadow-lg shadow-primary/20">
+                                Đăng nhập
+                            </button>
+                        </form>
+
+                        <div class="mt-6 pt-6 border-t border-neutral-100">
+                            <div class="grid grid-cols-2 gap-4">
+                                <button
+                                    class="flex items-center justify-center gap-2 py-2.5 border border-neutral-200 rounded-xl hover:bg-neutral-50 transition-colors">
+                                    <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="w-5 h-5"
+                                        alt="Google">
+                                    <span class="text-sm font-medium text-charcoal">Google</span>
+                                </button>
+                                <button
+                                    class="flex items-center justify-center gap-2 py-2.5 border border-neutral-200 rounded-xl hover:bg-neutral-50 transition-colors">
+                                    <img src="https://www.svgrepo.com/show/475647/facebook-color.svg" class="w-5 h-5"
+                                        alt="Facebook">
+                                    <span class="text-sm font-medium text-charcoal">Facebook</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <p class="mt-8 text-center text-sm text-warm-gray">
+                            Chưa có tài khoản?
+                            <button id="switch-to-register" class="text-primary font-bold hover:underline">Đăng ký
+                                ngay</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Register Modal -->
+        <div id="register-modal" class="fixed inset-0 z-[60] hidden">
+            <!-- Backdrop -->
+            <div class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity opacity-0"
+                id="register-backdrop"></div>
+
+            <!-- Modal Content -->
+            <div class="relative min-h-screen flex items-center justify-center p-4">
+                <div class="relative w-full max-w-md bg-white rounded-2xl shadow-2xl transform scale-95 opacity-0 transition-all duration-300"
+                    id="register-content">
+                    <!-- Close Button -->
+                    <button id="close-register"
+                        class="absolute top-4 right-4 p-2 rounded-full hover:bg-neutral-100 transition-colors">
+                        <span class="material-symbols-outlined text-neutral-500">close</span>
+                    </button>
+
+                    <div class="p-8">
+                        <div class="text-center mb-8">
+                            <h2 class="font-display text-2xl font-bold text-charcoal mb-2">Tạo tài khoản mới</h2>
+                            <p class="text-warm-gray text-sm">Tham gia cộng đồng Aoklevart ngay hôm nay</p>
+                        </div>
+
+                        <form class="space-y-4" onsubmit="event.preventDefault();">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-charcoal mb-1.5">Họ</label>
+                                    <input type="text" placeholder="Nguyễn"
+                                        class="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:border-primary focus:ring-primary transition-colors bg-neutral-50">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-charcoal mb-1.5">Tên</label>
+                                    <input type="text" placeholder="Văn A"
+                                        class="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:border-primary focus:ring-primary transition-colors bg-neutral-50">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-charcoal mb-1.5">Email</label>
+                                <input type="email" placeholder="name@example.com"
+                                    class="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:border-primary focus:ring-primary transition-colors bg-neutral-50">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-charcoal mb-1.5">Mật khẩu</label>
+                                <input type="password" placeholder="••••••••"
+                                    class="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:border-primary focus:ring-primary transition-colors bg-neutral-50">
+                            </div>
+
+                            <button
+                                class="w-full py-3.5 bg-primary text-white font-bold rounded-xl hover:bg-primary-light transition-all shadow-lg shadow-primary/20">
+                                Đăng ký tài khoản
+                            </button>
+                        </form>
+
+                        <p class="mt-6 text-center text-xs text-warm-gray px-4">
+                            Bằng việc đăng ký, bạn đồng ý với <a href="#" class="text-primary hover:underline">Điều
+                                khoản dịch
+                                vụ</a> & <a href="#" class="text-primary hover:underline">Chính sách bảo mật</a> của
+                            chúng tôi.
+                        </p>
+
+                        <p class="mt-8 text-center text-sm text-warm-gray">
+                            Đã có tài khoản?
+                            <button id="switch-to-login" class="text-primary font-bold hover:underline">Đăng
+                                nhập</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <!-- Scripts -->
     <script src="js/data.js"></script>
     <script src="js/search.js"></script>
     <script>
-        // Mobile menu logic for search page
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const closeMobileMenuBtn = document.getElementById('close-mobile-menu');
-        const mobileMenu = document.getElementById('mobile-menu');
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Modal Logic ---
+            const loginModal = document.getElementById('login-modal');
+            const registerModal = document.getElementById('register-modal');
+            const loginBtn = document.getElementById('login-btn');
+            const registerBtn = document.getElementById('register-btn');
+            const closeLoginBtn = document.getElementById('close-login');
+            const closeRegisterBtn = document.getElementById('close-register');
+            const switchToRegisterBtn = document.getElementById('switch-to-register');
+            const switchToLoginBtn = document.getElementById('switch-to-login');
 
-        if (mobileMenuBtn) {
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.remove('translate-x-full');
+            // Mobile Menu Logic
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const closeMobileMenuBtn = document.getElementById('close-mobile-menu');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLoginBtn = document.getElementById('mobile-login-btn');
+            const mobileRegisterBtn = document.getElementById('mobile-register-btn');
+
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.remove('translate-x-full');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+
+            if (closeMobileMenuBtn) {
+                closeMobileMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.add('translate-x-full');
+                    document.body.style.overflow = '';
+                });
+            }
+
+            if (mobileLoginBtn) {
+                mobileLoginBtn.addEventListener('click', () => {
+                    mobileMenu.classList.add('translate-x-full');
+                    openModal(loginModal);
+                });
+            }
+
+            if (mobileRegisterBtn) {
+                mobileRegisterBtn.addEventListener('click', () => {
+                    mobileMenu.classList.add('translate-x-full');
+                    openModal(registerModal);
+                });
+            }
+
+            // Helper to open modal with animation
+            const openModal = (modal) => {
+                modal.classList.remove('hidden');
+                // Trigger reflow
+                void modal.offsetWidth;
+
+                const backdrop = modal.querySelector('div[id$="-backdrop"]');
+                const content = modal.querySelector('div[id$="-content"]');
+
+                backdrop.classList.remove('opacity-0');
+                content.classList.remove('opacity-0', 'scale-95');
+                content.classList.add('scale-100');
+
                 document.body.style.overflow = 'hidden';
-            });
-        }
+            };
 
-        if (closeMobileMenuBtn) {
-            closeMobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.add('translate-x-full');
-                document.body.style.overflow = '';
-            });
-        }
+            // Helper to close modal with animation
+            const closeModal = (modal) => {
+                const backdrop = modal.querySelector('div[id$="-backdrop"]');
+                const content = modal.querySelector('div[id$="-content"]');
+
+                backdrop.classList.add('opacity-0');
+                content.classList.remove('scale-100');
+                content.classList.add('opacity-0', 'scale-95');
+
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                    document.body.style.overflow = '';
+                }, 300);
+            };
+
+            if (loginBtn) loginBtn.addEventListener('click', () => openModal(loginModal));
+            if (registerBtn) registerBtn.addEventListener('click', () => openModal(registerModal));
+
+            if (closeLoginBtn) closeLoginBtn.addEventListener('click', () => closeModal(loginModal));
+            if (closeRegisterBtn) closeRegisterBtn.addEventListener('click', () => closeModal(registerModal));
+
+            // Close on backdrop click
+            if (loginModal) {
+                loginModal.addEventListener('click', (e) => {
+                    if (e.target === loginModal.querySelector('.min-h-screen')) closeModal(loginModal);
+                });
+            }
+            if (registerModal) {
+                registerModal.addEventListener('click', (e) => {
+                    if (e.target === registerModal.querySelector('.min-h-screen')) closeModal(registerModal);
+                });
+            }
+
+            // Switch modals
+            if (switchToRegisterBtn) {
+                switchToRegisterBtn.addEventListener('click', () => {
+                    closeModal(loginModal);
+                    setTimeout(() => openModal(registerModal), 300);
+                });
+            }
+
+            if (switchToLoginBtn) {
+                switchToLoginBtn.addEventListener('click', () => {
+                    closeModal(registerModal);
+                    setTimeout(() => openModal(loginModal), 300);
+                });
+            }
+        });
     </script>
 </body>
 
