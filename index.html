@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aoklevart - Luxury Stays</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1a3a3a",
+                        "accent": "#c9a962",
+                        "cream": "#faf8f5",
+                        "charcoal": "#1c1c1c",
+                    },
+                    fontFamily: {
+                        "display": ["Playfair Display", "serif"],
+                        "body": ["DM Sans", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInScale {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes spinSlow {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spinSlowReverse {
+            0% {
+                transform: rotate(360deg);
+            }
+
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+
+        @keyframes progressBar {
+            0% {
+                width: 0%;
+            }
+
+            100% {
+                width: 100%;
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .animate-fade-in-scale {
+            animation: fadeInScale 0.6s ease-out forwards;
+        }
+
+        .animate-fade-out {
+            animation: fadeOut 0.5s ease-in forwards;
+        }
+
+        .animate-spin-slow {
+            animation: spinSlow 4s linear infinite;
+        }
+
+        .animate-spin-slow-reverse {
+            animation: spinSlowReverse 4s linear infinite;
+        }
+
+        .progress-bar {
+            animation: progressBar 3s ease-out forwards;
+        }
+
+        .animate-pulse-slow {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        /* Smooth transitions */
+        * {
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Logo ring glow effect */
+        .ring-glow {
+            box-shadow: 0 0 20px rgba(201, 169, 98, 0.3);
+        }
+
+
+
+        /* Loading dots animation */
+        @keyframes dotFlashing {
+
+            0%,
+            80%,
+            100% {
+                opacity: 0;
+            }
+
+            40% {
+                opacity: 1;
+            }
+        }
+
+        .dot {
+            animation: dotFlashing 1.4s infinite;
+        }
+
+        .dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+    </style>
+</head>
+
+<body class="bg-cream h-screen flex flex-col items-center justify-center overflow-hidden font-body relative">
+
+    <!-- Main Content Container -->
+    <div id="intro-content" class="flex flex-col items-center justify-center opacity-0 animate-fade-in-scale">
+
+        <!-- Logo Container with enhanced effects -->
+        <div class="relative w-28 h-28 mb-10 flex items-center justify-center">
+            <!-- Outer glow ring -->
+            <div class="absolute inset-0 bg-accent/5 rounded-full blur-xl"></div>
+
+            <!-- Rotating Rings with stagger effect -->
+            <div class="absolute inset-0 border-2 border-accent/30 rounded-full animate-spin-slow ring-glow"></div>
+            <div class="absolute inset-3 border-2 border-primary/20 rounded-full animate-spin-slow-reverse"></div>
+
+            <!-- Logo Icon with shadow -->
+            <div
+                class="relative w-16 h-16 flex items-center justify-center bg-gradient-to-br from-primary to-primary/90 rounded-xl transform rotate-45 shadow-2xl shadow-primary/20">
+                <span class="text-white font-display font-bold text-3xl transform -rotate-45">A</span>
+            </div>
+        </div>
+
+        <!-- Brand Name with stagger animation -->
+        <div class="text-center space-y-3 mb-12">
+            <h1 class="font-display text-5xl md:text-6xl font-bold text-primary tracking-tight opacity-0 animate-fade-in-up"
+                style="animation-delay: 0.2s;">
+                Aoklevart
+            </h1>
+            <p class="text-accent text-sm uppercase tracking-[0.3em] font-medium opacity-0 animate-fade-in-up"
+                style="animation-delay: 0.4s;">
+                Luxury Stays
+            </p>
+
+            <!-- Tagline -->
+            <p class="text-primary/60 text-base font-light mt-4 opacity-0 animate-fade-in-up"
+                style="animation-delay: 0.6s;">
+                Trải nghiệm sang trọng đẳng cấp
+            </p>
+        </div>
+
+        <!-- Enhanced Loading Section -->
+        <div class="flex flex-col items-center space-y-6 opacity-0 animate-fade-in-up" style="animation-delay: 0.8s;">
+            <!-- Loading Text with dots -->
+            <div class="flex items-center space-x-2">
+                <span class="text-primary/70 text-sm font-medium">Đang tải</span>
+                <div class="flex space-x-1">
+                    <span class="dot w-1.5 h-1.5 bg-accent rounded-full"></span>
+                    <span class="dot w-1.5 h-1.5 bg-accent rounded-full"></span>
+                    <span class="dot w-1.5 h-1.5 bg-accent rounded-full"></span>
+                </div>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="w-64 h-1 bg-primary/10 rounded-full overflow-hidden">
+                <div id="progress" class="h-full bg-gradient-to-r from-accent to-accent/70 progress-bar rounded-full">
+                </div>
+            </div>
+
+            <!-- Percentage Display -->
+            <div id="percentage" class="text-accent text-xs font-medium">0%</div>
+        </div>
+
+        <!-- Bottom decoration -->
+        <div class="mt-16 flex space-x-2 opacity-0 animate-fade-in-up" style="animation-delay: 1s;">
+            <div class="w-12 h-0.5 bg-accent/30"></div>
+            <div class="w-2 h-0.5 bg-accent/30"></div>
+        </div>
+    </div>
+
+    <script>
+        // Progress tracking
+        let progress = 0;
+        const percentageEl = document.getElementById('percentage');
+        const progressInterval = setInterval(() => {
+            if (progress < 100) {
+                progress += 2;
+                if (percentageEl) {
+                    percentageEl.textContent = `${Math.min(progress, 100)}%`;
+                }
+            } else {
+                clearInterval(progressInterval);
+            }
+        }, 60);
+
+        // Fade out and redirect function
+        function fadeOutAndRedirect() {
+            const content = document.getElementById('intro-content');
+
+            content.classList.remove('animate-fade-in-scale');
+            content.classList.add('animate-fade-out');
+
+            setTimeout(() => {
+                window.location.href = 'home.html';
+            }, 500);
+        }
+
+        // Auto redirect after loading completes
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                fadeOutAndRedirect();
+            }, 2000);
+        });
+
+        // Preload home page for faster transition
+        const link = document.createElement('link');
+        link.rel = 'prefetch';
+        link.href = 'home.html';
+        document.head.appendChild(link);
+
+        // Prevent accidental navigation during intro
+        window.addEventListener('beforeunload', (e) => {
+            if (document.getElementById('intro-content')) {
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+
+</html>
