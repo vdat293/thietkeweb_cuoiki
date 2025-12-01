@@ -714,6 +714,20 @@
                 }
             };
 
+            // Pre-fill from URL params if available (for edit flow)
+            const checkInParam = urlParams.get('checkIn');
+            const checkOutParam = urlParams.get('checkOut');
+            const roomTypeParam = urlParams.get('roomType');
+
+            if (checkInParam) checkInInput.value = checkInParam;
+            if (checkOutParam) checkOutInput.value = checkOutParam;
+            if (roomTypeParam) roomTypeSelect.value = roomTypeParam;
+
+            // Trigger update if we have values
+            if (checkInParam && checkOutParam) {
+                updatePrice();
+            }
+
             checkInInput.addEventListener('change', () => {
                 // Ensure check-out is after check-in
                 if (checkInInput.value) {

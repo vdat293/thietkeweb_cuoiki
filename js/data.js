@@ -777,6 +777,7 @@ window.properties = [
         id: 51,
         name: "Elegant Hue Hotel",
         location: "Huế, Việt Nam",
+        type: "hotel",
         price: "Liên hệ",
         rating: 4.7,
         reviews: 98,
