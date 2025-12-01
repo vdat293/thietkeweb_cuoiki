@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Hỗ trợ - Aoklevart</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1a3a3a",
+                        "primary-light": "#2d5a5a",
+                        "accent": "#c9a962",
+                        "accent-light": "#e8d5a3",
+                        "cream": "#faf8f5",
+                        "charcoal": "#1c1c1c",
+                        "warm-gray": "#6b6b6b",
+                        "light-border": "rgba(0,0,0,0.06)",
+                    },
+                    fontFamily: {
+                        "display": ["Playfair Display", "serif"],
+                        "body": ["DM Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'elegant': '0 4px 40px rgba(0,0,0,0.08)',
+                        'elegant-lg': '0 10px 60px rgba(0,0,0,0.12)',
+                        'elegant-xl': '0 20px 80px rgba(0,0,0,0.15)',
+                        'inner-soft': 'inset 0 2px 8px rgba(0,0,0,0.04)',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        html {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            scroll-behavior: smooth;
+        }
+
+        .nav-link.active {
+            color: #1a3a3a;
+            font-weight: 700;
+        }
+
+        .nav-link.active::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: currentColor;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .nav-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .btn-premium {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .btn-premium::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .btn-premium:hover::before {
+            transform: translateX(100%);
+        }
+    </style>
+</head>
+
+<body class="bg-cream font-body text-charcoal antialiased">
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+
+        <!-- Header -->
+        <header
+            class="fixed top-0 z-50 w-full bg-cream/95 backdrop-blur-lg border-b border-light-border transition-all duration-500">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="flex items-center justify-between h-20">
+
+                    <!-- Logo -->
+                    <a href="home.html" class="flex items-center gap-3 group">
+                        <div class="relative w-10 h-10 flex items-center justify-center">
+                            <div
+                                class="absolute inset-0 bg-primary rounded-lg transform rotate-45 group-hover:rotate-[50deg] transition-transform duration-500">
+                            </div>
+                            <span class="relative text-white font-display font-bold text-lg">A</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span
+                                class="font-display text-xl font-semibold text-primary tracking-tight">Aoklevart</span>
+                            <span
+                                class="text-[10px] uppercase tracking-[0.2em] text-warm-gray font-medium -mt-0.5">Luxury
+                                Stays</span>
+                        </div>
+                    </a>
+
+                    <!-- Navigation -->
+                    <nav class="hidden lg:flex items-center gap-10">
+                        <a class="nav-link text-sm font-medium text-charcoal hover:text-primary transition-colors duration-300"
+                            href="home.html#featured-properties-section">
+                            Chỗ ở
+                        </a>
+                        <a class="nav-link text-sm font-medium text-charcoal hover:text-primary transition-colors duration-300"
+                            href="home.html#destinations-section">
+                            Điểm đến
+                        </a>
+                        <a class="nav-link text-sm font-medium text-charcoal hover:text-primary transition-colors duration-300"
+                            href="#">
+                            Trải nghiệm
+                        </a>
+                        <a class="nav-link text-sm font-medium text-charcoal hover:text-primary transition-colors duration-300"
+                            href="about.html">
+                            Về chúng tôi
+                        </a>
+                    </nav>
+
+                    <!-- Action Buttons -->
+                    <div class="hidden lg:flex items-center gap-3">
+                        <a href="household.html"
+                            class="flex items-center gap-2 px-5 py-2.5 text-sm font-medium text-charcoal hover:text-primary transition-all duration-300">
+                            <span class="material-symbols-outlined text-lg">home_work</span>
+                            <span>Đăng cho thuê</span>
+                        </a>
+                        <button
+                            class="px-5 py-2.5 text-sm font-medium text-charcoal hover:text-primary transition-colors duration-300">
+                            Đăng nhập
+                        </button>
+                        <button
+                            class="btn-premium px-6 py-2.5 bg-primary text-white text-sm font-medium rounded-lg hover:bg-primary-light hover:shadow-elegant transition-all duration-300">
+                            Đăng ký
+                        </button>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <button class="lg:hidden p-2 text-charcoal hover:bg-neutral-100 rounded-lg transition-colors">
+                        <span class="material-symbols-outlined text-2xl">menu</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex-grow pt-20">
+            <!-- Hero Section -->
+            <section class="relative py-20 lg:py-32 bg-primary overflow-hidden">
+                <div class="absolute inset-0 opacity-10">
+                    <svg viewBox="0 0 400 400" class="w-full h-full">
+                        <circle cx="200" cy="200" r="150" stroke="white" stroke-width="1" fill="none" />
+                        <circle cx="200" cy="200" r="200" stroke="white" stroke-width="0.5" fill="none" />
+                    </svg>
+                </div>
+                <div class="relative max-w-7xl mx-auto px-6 lg:px-8 text-center">
+                    <p class="text-accent-light text-sm uppercase tracking-[0.2em] font-medium mb-6">Trung tâm trợ giúp
+                    </p>
+                    <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-white mb-8">
+                        Chúng tôi có thể giúp gì <br /> <span class="italic text-accent">cho bạn?</span>
+                    </h1>
+
+                    <!-- Search Box -->
+                    <div class="max-w-2xl mx-auto relative">
+                        <input type="text" placeholder="Tìm kiếm câu trả lời..."
+                            class="w-full pl-12 pr-4 py-4 rounded-xl border-none focus:ring-2 focus:ring-accent text-charcoal shadow-lg">
+                        <span
+                            class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-warm-gray">search</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Categories -->
+            <section class="py-20 bg-white">
+                <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div
+                            class="p-8 rounded-2xl border border-neutral-100 hover:shadow-elegant transition-all duration-300 cursor-pointer group">
+                            <div
+                                class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                                <span class="material-symbols-outlined text-2xl">calendar_month</span>
+                            </div>
+                            <h3 class="font-display text-xl font-semibold text-charcoal mb-3">Đặt phòng & Hủy phòng</h3>
+                            <p class="text-warm-gray">Hướng dẫn đặt phòng, thay đổi lịch trình và chính sách hủy.</p>
+                        </div>
+                        <div
+                            class="p-8 rounded-2xl border border-neutral-100 hover:shadow-elegant transition-all duration-300 cursor-pointer group">
+                            <div
+                                class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                                <span class="material-symbols-outlined text-2xl">payments</span>
+                            </div>
+                            <h3 class="font-display text-xl font-semibold text-charcoal mb-3">Thanh toán & Hoàn tiền
+                            </h3>
+                            <p class="text-warm-gray">Các phương thức thanh toán, hóa đơn và quy trình hoàn tiền.</p>
+                        </div>
+                        <div
+                            class="p-8 rounded-2xl border border-neutral-100 hover:shadow-elegant transition-all duration-300 cursor-pointer group">
+                            <div
+                                class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                                <span class="material-symbols-outlined text-2xl">account_circle</span>
+                            </div>
+                            <h3 class="font-display text-xl font-semibold text-charcoal mb-3">Tài khoản & Bảo mật</h3>
+                            <p class="text-warm-gray">Quản lý thông tin cá nhân, đăng nhập và bảo mật tài khoản.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section class="py-20 lg:py-28 bg-cream">
+                <div class="max-w-4xl mx-auto px-6 lg:px-8">
+                    <div class="text-center mb-12">
+                        <h2 class="font-display text-3xl md:text-4xl font-semibold text-charcoal mb-4">Vẫn cần hỗ trợ?
+                        </h2>
+                        <p class="text-warm-gray">Đội ngũ hỗ trợ của chúng tôi luôn sẵn sàng 24/7</p>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-elegant p-8 md:p-12">
+                        <form class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-charcoal mb-2">Họ tên</label>
+                                    <input type="text"
+                                        class="w-full px-4 py-3 rounded-lg border border-neutral-200 focus:border-primary focus:ring-primary bg-neutral-50">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-charcoal mb-2">Email</label>
+                                    <input type="email"
+                                        class="w-full px-4 py-3 rounded-lg border border-neutral-200 focus:border-primary focus:ring-primary bg-neutral-50">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-charcoal mb-2">Chủ đề</label>
+                                <select
+                                    class="w-full px-4 py-3 rounded-lg border border-neutral-200 focus:border-primary focus:ring-primary bg-neutral-50">
+                                    <option>Vấn đề đặt phòng</option>
+                                    <option>Thanh toán</option>
+                                    <option>Tài khoản</option>
+                                    <option>Khác</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-charcoal mb-2">Nội dung</label>
+                                <textarea rows="4"
+                                    class="w-full px-4 py-3 rounded-lg border border-neutral-200 focus:border-primary focus:ring-primary bg-neutral-50"></textarea>
+                            </div>
+                            <button
+                                class="w-full py-4 bg-primary text-white font-bold rounded-xl hover:bg-primary-light transition-all shadow-lg shadow-primary/20">
+                                Gửi yêu cầu
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-charcoal text-white">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-20">
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-8 lg:gap-12">
+                    <!-- Brand Column -->
+                    <div class="col-span-2">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="relative w-10 h-10 flex items-center justify-center">
+                                <div class="absolute inset-0 bg-accent rounded-lg transform rotate-45"></div>
+                                <span class="relative text-charcoal font-display font-bold text-lg">A</span>
+                            </div>
+                            <span class="font-display text-xl font-semibold">Aoklevart</span>
+                        </div>
+                        <p class="text-white/60 text-sm leading-relaxed mb-6 max-w-xs">
+                            Nền tảng đặt phòng nghỉ dưỡng hàng đầu Việt Nam, kết nối bạn với những trải nghiệm lưu trú
+                            độc đáo.
+                        </p>
+                    </div>
+
+                    <!-- Links Columns -->
+                    <div>
+                        <h4 class="font-semibold text-white mb-5">Về Aoklevart</h4>
+                        <ul class="space-y-3">
+                            <li><a href="about.html"
+                                    class="text-white/60 text-sm hover:text-accent transition-colors duration-300">Giới
+                                    thiệu</a></li>
+                            <li><a href="careers.html"
+                                    class="text-white/60 text-sm hover:text-accent transition-colors duration-300">Tuyển
+                                    dụng</a></li>
+                            <li><a href="#"
+                                    class="text-white/60 text-sm hover:text-accent transition-colors duration-300">Báo
+                                    chí</a></li>
+                            <li><a href="#"
+                                    class="text-white/60 text-sm hover:text-accent transition-colors duration-300">Blog</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-white mb-5">Hỗ trợ</h4>
+                        <ul class="space-y-3">
+                            <li><a href="support.html"
+                                    class="text-white/60 text-sm hover:text-accent transition-colors duration-300">Trung
+                                    tâm trợ giúp</a></li>
+                            <li><a href="support.html"
+                                    class="text-white/60 text-sm hover:text-accent transition-colors duration-300">Câu
+                                    hỏi thường gặp</a></li>
+                            <li><a href="support.html"
+                                    class="text-white/60 text-sm hover:text-accent transition-colors duration-300">Liên
+                                    hệ</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-white mb-5">Pháp lý</h4>
+                        <ul class="space-y-3">
+                            <li><a href="terms.html"
+                                    class="text-white/60 text-sm hover:text-accent transition-colors duration-300">Điều
+                                    khoản dịch vụ</a></li>
+                            <li><a href="terms.html"
+                                    class="text-white/60 text-sm hover:text-accent transition-colors duration-300">Chính
+                                    sách bảo mật</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div
+                    class="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
+                    <p class="text-white/40 text-sm">© 2024 Aoklevart. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- Login Modal -->
+    <div id="login-modal" class="fixed inset-0 z-[60] hidden">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity opacity-0" id="login-backdrop">
+        </div>
+
+        <!-- Modal Content -->
+        <div class="relative min-h-screen flex items-center justify-center p-4">
+            <div class="relative w-full max-w-md bg-white rounded-2xl shadow-2xl transform scale-95 opacity-0 transition-all duration-300"
+                id="login-content">
+                <!-- Close Button -->
+                <button id="close-login"
+                    class="absolute top-4 right-4 p-2 rounded-full hover:bg-neutral-100 transition-colors">
+                    <span class="material-symbols-outlined text-neutral-500">close</span>
+                </button>
+
+                <div class="p-8">
+                    <div class="text-center mb-8">
+                        <h2 class="font-display text-2xl font-bold text-charcoal mb-2">Chào mừng trở lại</h2>
+                        <p class="text-warm-gray text-sm">Đăng nhập để tiếp tục trải nghiệm</p>
+                    </div>
+
+                    <form class="space-y-4" onsubmit="event.preventDefault();">
+                        <div>
+                            <label class="block text-sm font-medium text-charcoal mb-1.5">Email</label>
+                            <input type="email" placeholder="name@example.com"
+                                class="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:border-primary focus:ring-primary transition-colors bg-neutral-50">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-charcoal mb-1.5">Mật khẩu</label>
+                            <input type="password" placeholder="••••••••"
+                                class="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:border-primary focus:ring-primary transition-colors bg-neutral-50">
+                        </div>
+
+                        <div class="flex items-center justify-between text-sm">
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="checkbox"
+                                    class="rounded border-neutral-300 text-primary focus:ring-primary">
+                                <span class="text-warm-gray">Ghi nhớ đăng nhập</span>
+                            </label>
+                            <a href="#" class="text-primary font-medium hover:underline">Quên mật khẩu?</a>
+                        </div>
+
+                        <button
+                            class="w-full py-3.5 bg-primary text-white font-bold rounded-xl hover:bg-primary-light transition-all shadow-lg shadow-primary/20">
+                            Đăng nhập
+                        </button>
+                    </form>
+
+                    <div class="mt-6 pt-6 border-t border-neutral-100">
+                        <div class="grid grid-cols-2 gap-4">
+                            <button
+                                class="flex items-center justify-center gap-2 py-2.5 border border-neutral-200 rounded-xl hover:bg-neutral-50 transition-colors">
+                                <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="w-5 h-5"
+                                    alt="Google">
+                                <span class="text-sm font-medium text-charcoal">Google</span>
+                            </button>
+                            <button
+                                class="flex items-center justify-center gap-2 py-2.5 border border-neutral-200 rounded-xl hover:bg-neutral-50 transition-colors">
+                                <img src="https://www.svgrepo.com/show/475647/facebook-color.svg" class="w-5 h-5"
+                                    alt="Facebook">
+                                <span class="text-sm font-medium text-charcoal">Facebook</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <p class="mt-8 text-center text-sm text-warm-gray">
+                        Chưa có tài khoản?
+                        <button id="switch-to-register" class="text-primary font-bold hover:underline">Đăng ký
+                            ngay</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="register-modal" class="fixed inset-0 z-[60] hidden">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity opacity-0" id="register-backdrop">
+        </div>
+
+        <!-- Modal Content -->
+        <div class="relative min-h-screen flex items-center justify-center p-4">
+            <div class="relative w-full max-w-md bg-white rounded-2xl shadow-2xl transform scale-95 opacity-0 transition-all duration-300"
+                id="register-content">
+                <!-- Close Button -->
+                <button id="close-register"
+                    class="absolute top-4 right-4 p-2 rounded-full hover:bg-neutral-100 transition-colors">
+                    <span class="material-symbols-outlined text-neutral-500">close</span>
+                </button>
+
+                <div class="p-8">
+                    <div class="text-center mb-8">
+                        <h2 class="font-display text-2xl font-bold text-charcoal mb-2">Tạo tài khoản mới</h2>
+                        <p class="text-warm-gray text-sm">Tham gia cộng đồng Aoklevart ngay hôm nay</p>
+                    </div>
+
+                    <form class="space-y-4" onsubmit="event.preventDefault();">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-charcoal mb-1.5">Họ</label>
+                                <input type="text" placeholder="Nguyễn"
+                                    class="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:border-primary focus:ring-primary transition-colors bg-neutral-50">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-charcoal mb-1.5">Tên</label>
+                                <input type="text" placeholder="Văn A"
+                                    class="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:border-primary focus:ring-primary transition-colors bg-neutral-50">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-charcoal mb-1.5">Email</label>
+                            <input type="email" placeholder="name@example.com"
+                                class="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:border-primary focus:ring-primary transition-colors bg-neutral-50">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-charcoal mb-1.5">Mật khẩu</label>
+                            <input type="password" placeholder="••••••••"
+                                class="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:border-primary focus:ring-primary transition-colors bg-neutral-50">
+                        </div>
+
+                        <button
+                            class="w-full py-3.5 bg-primary text-white font-bold rounded-xl hover:bg-primary-light transition-all shadow-lg shadow-primary/20">
+                            Đăng ký tài khoản
+                        </button>
+                    </form>
+
+                    <p class="mt-6 text-center text-xs text-warm-gray px-4">
+                        Bằng việc đăng ký, bạn đồng ý với <a href="#" class="text-primary hover:underline">Điều khoản
+                            dịch
+                            vụ</a> & <a href="#" class="text-primary hover:underline">Chính sách bảo mật</a> của chúng
+                        tôi.
+                    </p>
+
+                    <p class="mt-8 text-center text-sm text-warm-gray">
+                        Đã có tài khoản?
+                        <button id="switch-to-login" class="text-primary font-bold hover:underline">Đăng nhập</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Modal Logic ---
+            const loginModal = document.getElementById('login-modal');
+            const registerModal = document.getElementById('register-modal');
+            const loginBtn = document.getElementById('login-btn');
+            const registerBtn = document.getElementById('register-btn');
+            const closeLoginBtn = document.getElementById('close-login');
+            const closeRegisterBtn = document.getElementById('close-register');
+            const switchToRegisterBtn = document.getElementById('switch-to-register');
+            const switchToLoginBtn = document.getElementById('switch-to-login');
+
+            // Mobile Menu Logic
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const closeMobileMenuBtn = document.getElementById('close-mobile-menu');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLoginBtn = document.getElementById('mobile-login-btn');
+            const mobileRegisterBtn = document.getElementById('mobile-register-btn');
+
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.remove('translate-x-full');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+
+            if (closeMobileMenuBtn) {
+                closeMobileMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.add('translate-x-full');
+                    document.body.style.overflow = '';
+                });
+            }
+
+            if (mobileLoginBtn) {
+                mobileLoginBtn.addEventListener('click', () => {
+                    mobileMenu.classList.add('translate-x-full');
+                    openModal(loginModal);
+                });
+            }
+
+            if (mobileRegisterBtn) {
+                mobileRegisterBtn.addEventListener('click', () => {
+                    mobileMenu.classList.add('translate-x-full');
+                    openModal(registerModal);
+                });
+            }
+
+            // Helper to open modal with animation
+            const openModal = (modal) => {
+                modal.classList.remove('hidden');
+                // Trigger reflow
+                void modal.offsetWidth;
+
+                const backdrop = modal.querySelector('div[id$="-backdrop"]');
+                const content = modal.querySelector('div[id$="-content"]');
+
+                backdrop.classList.remove('opacity-0');
+                content.classList.remove('opacity-0', 'scale-95');
+                content.classList.add('scale-100');
+
+                document.body.style.overflow = 'hidden';
+            };
+
+            // Helper to close modal with animation
+            const closeModal = (modal) => {
+                const backdrop = modal.querySelector('div[id$="-backdrop"]');
+                const content = modal.querySelector('div[id$="-content"]');
+
+                backdrop.classList.add('opacity-0');
+                content.classList.remove('scale-100');
+                content.classList.add('opacity-0', 'scale-95');
+
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                    document.body.style.overflow = '';
+                }, 300);
+            };
+
+            if (loginBtn) loginBtn.addEventListener('click', () => openModal(loginModal));
+            if (registerBtn) registerBtn.addEventListener('click', () => openModal(registerModal));
+
+            if (closeLoginBtn) closeLoginBtn.addEventListener('click', () => closeModal(loginModal));
+            if (closeRegisterBtn) closeRegisterBtn.addEventListener('click', () => closeModal(registerModal));
+
+            // Close on backdrop click
+            if (loginModal) {
+                loginModal.addEventListener('click', (e) => {
+                    if (e.target === loginModal.querySelector('.min-h-screen')) closeModal(loginModal);
+                });
+            }
+            if (registerModal) {
+                registerModal.addEventListener('click', (e) => {
+                    if (e.target === registerModal.querySelector('.min-h-screen')) closeModal(registerModal);
+                });
+            }
+
+            // Switch modals
+            if (switchToRegisterBtn) {
+                switchToRegisterBtn.addEventListener('click', () => {
+                    closeModal(loginModal);
+                    setTimeout(() => openModal(registerModal), 300);
+                });
+            }
+
+            if (switchToLoginBtn) {
+                switchToLoginBtn.addEventListener('click', () => {
+                    closeModal(registerModal);
+                    setTimeout(() => openModal(loginModal), 300);
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
