@@ -484,10 +484,11 @@
         </div>
 
         <!-- Scroll Indicator -->
-        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <div class="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center p-2">
-            <div class="w-1 h-2 bg-white/50 rounded-full"></div>
-          </div>
+        <div
+          class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce flex flex-col items-center gap-1 cursor-pointer"
+          onclick="document.getElementById('featured-properties-section').scrollIntoView({behavior: 'smooth'})">
+          <span class="text-white/70 text-sm font-medium">Cuộn xuống</span>
+          <span class="material-symbols-outlined text-white/70">keyboard_arrow_down</span>
         </div>
       </section>
 
@@ -1117,13 +1118,46 @@
       if (!container || !prevBtn || !nextBtn) return;
 
       const scrollAmount = 340;
+      let currentIndex = 0;
+
+      function getCardWidth() {
+        const propertyCards = container.querySelectorAll('.property-card');
+        if (propertyCards.length === 0) return scrollAmount;
+        return propertyCards[0].offsetWidth + 24; // 24 = gap
+      }
+
+      function getTotalCards() {
+        return container.querySelectorAll('.property-card').length;
+      }
 
       prevBtn.addEventListener('click', () => {
+        const totalCards = getTotalCards();
+        if (totalCards === 0) return;
+
+        currentIndex = Math.max(0, currentIndex - 1);
         container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        // Cập nhật indicator ngay lập tức
+        if (typeof updateIndicators === 'function') {
+          updateIndicators(currentIndex);
+        }
       });
 
       nextBtn.addEventListener('click', () => {
+        const totalCards = getTotalCards();
+        if (totalCards === 0) return;
+
+        currentIndex = Math.min(totalCards - 1, currentIndex + 1);
         container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        // Cập nhật indicator ngay lập tức
+        if (typeof updateIndicators === 'function') {
+          updateIndicators(currentIndex);
+        }
+      });
+
+      // Đồng bộ currentIndex khi scroll thủ công bằng chuột
+      container.addEventListener('scroll', () => {
+        const cardWidth = getCardWidth();
+        currentIndex = Math.round(container.scrollLeft / cardWidth);
       });
 
       function updateButtonStates() {

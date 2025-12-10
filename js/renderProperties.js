@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     featuredPropertiesContainer.innerHTML = '';
 
     // Render tất cả properties từ data
-    // Render top 10 properties từ data
+    // Render top 8 properties từ data
     const featuredProperties = window.properties.slice(0, 10);
     featuredProperties.forEach((property, index) => {
         const propertyCard = createPropertyCard(property, index);
@@ -123,3 +123,25 @@ function updateIndicators(activeIndex) {
         }
     });
 }
+
+// Thêm scroll listener để tự động cập nhật indicators khi scroll
+document.addEventListener('DOMContentLoaded', function () {
+    const container = document.getElementById('carousel-container');
+    if (!container) return;
+
+    let scrollTimeout;
+    container.addEventListener('scroll', function () {
+        // Debounce để tránh gọi quá nhiều lần
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(function () {
+            const propertyCards = container.querySelectorAll('.property-card');
+            if (propertyCards.length === 0) return;
+
+            const cardWidth = propertyCards[0].offsetWidth + 24; // 24 = gap-6 (1.5rem = 24px)
+            const scrollPosition = container.scrollLeft;
+            const activeIndex = Math.round(scrollPosition / cardWidth);
+
+            updateIndicators(Math.min(activeIndex, propertyCards.length - 1));
+        }, 50);
+    });
+});
