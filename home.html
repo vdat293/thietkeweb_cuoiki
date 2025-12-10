@@ -1206,13 +1206,16 @@
       });
     });
 
-    // Popup Modal Quảng cáo
+    // Popup Modal Quảng cáo - Chỉ hiển thị 1 lần duy nhất
     document.addEventListener('DOMContentLoaded', () => {
       const adModal = document.getElementById('ad-popup-modal');
       const closeAdBtn = document.getElementById('close-ad-popup');
       const adBackdrop = document.getElementById('ad-popup-backdrop');
 
-      if (adModal) {
+      // Kiểm tra xem popup đã được hiển thị chưa
+      const hasSeenPopup = sessionStorage.getItem('hasSeenAdPopup');
+
+      if (adModal && !hasSeenPopup) {
         // Hiển thị popup sau 500ms
         setTimeout(() => {
           adModal.classList.remove('hidden');
@@ -1223,7 +1226,7 @@
           }, 10);
         }, 500);
 
-        // Đóng popup
+        // Đóng popup và đánh dấu đã xem
         const closeAdModal = () => {
           adBackdrop.classList.add('opacity-0');
           document.getElementById('ad-popup-content').classList.remove('scale-100');
@@ -1231,6 +1234,8 @@
           setTimeout(() => {
             adModal.classList.add('hidden');
           }, 300);
+          // Lưu vào sessionStorage để không hiển thị lại
+          sessionStorage.setItem('hasSeenAdPopup', 'true');
         };
 
         closeAdBtn.addEventListener('click', closeAdModal);
